@@ -22,6 +22,10 @@ Here are the notes that you should follow when
 doing various things, feel free to update if 
 you find any other useful tips.
 
+*extra explanatory text - there are many \ifelse statements
+within the LaTeX files which can be uncommented to get rid
+of most of the explanations
+
 *Captions - use the square brackets to keep the table of
 figures short, otherwise you'll end up with really really
 long table of figures, ref: http://tex.stackexchange.com/questions/11579/captions-for-figures-in-listoffigures

@@ -1,0 +1,79 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+##
+# check for args < 2, just assume
+# if 1 (i.e., help,etc.) are included
+##
+sub checkhelp($);
+sub checkexists($);
+sub checkgs();
+
+## check to see if ghostscript is installed
+checkgs();
+
+checkhelp( \@ARGV );
+
+##
+# get files
+##
+my $output = $ARGV[ 0 ];
+my @filestemp = @ARGV[1..(@ARGV-1)];
+my $files  = join( ' ', checkexists( \@filestemp ));
+
+`gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$output $files`;
+
+exit( 0 );
+
+
+##
+# takes in all env args 
+##
+sub checkhelp( $ )
+{
+   my $arr = shift( @_ );
+   if( @$arr < 2 )
+   {
+      print STDOUT "<outputfile> <joinfiles> [more join files]\n";
+      exit( 0 );
+   }
+   return;
+}
+
+##
+# check for existence of all files, skip otherwise
+##
+sub checkexists( $ )
+{
+   my $arr = shift;
+   my @exist;
+   for my $file ( @$arr )
+   { 
+      chomp( $file );
+      if( -e $file )
+      {
+         print "joining $file\n";
+         push( @exist, $file );
+      }
+      else
+      {
+         print "File \"$file\" doesn't exist, skipping\n";
+      }
+   }
+   if( @exist < 1 )
+   {
+      print( "Not enough files actually exist, try again!\n" );
+      exit( -1 );
+   }
+   return( @exist  );
+}
+
+sub checkgs()
+{
+   if( `which gs` eq '' )
+   {
+      print STDERR "\nERROR: requires ghostscript, install from http://ghostscript.com\n";
+      exit( -1 );
+   }
+}
