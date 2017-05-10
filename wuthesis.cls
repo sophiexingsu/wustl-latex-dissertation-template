@@ -22,7 +22,7 @@
 %% in the same archive or directory.)
 %% Copyright (C) 1996 Long Duan
 %% 2005, 2007, and 2008 revisions by Greg Hackmann
-%% 2014 revisions by Michael Hall
+%% 2014 revisions by Michael Hall, David Lu!!
 %%
 %% Please note:  This document class is not compatable with the
 %%               old LaTeX 2.09.  It uses LaTeX2e specific commands.
@@ -31,8 +31,8 @@
 %%
 %% gwh2@cse.wustl.edu
 %%
-\def\fileversion{1.7b}
-\def\filedate{11/20/2014}
+\def\fileversion{1.10}
+\def\filedate{4/13/2017}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -53,8 +53,8 @@
 \typeout{** Wash U - Sever Institute thesis class                     }
 \typeout{** version \fileversion, \filedate                           }
 \typeout{** Copyright (c) 1995 Kevin Ruland                           }
-\typeout{** with revisions by Long Duan, Greg Hackmann, and           }
-\typeout{** Michael Hall                                              }
+\typeout{** with revisions by Long Duan, Greg Hackmann,               }
+\typeout{** Michael Hall, David Lu!!, Kyle Harms                      }
 \typeout{*************************************************************}
 %%
 %% Actually not too much of this code remains but the copyright
@@ -104,7 +104,7 @@
 \DeclareOption{indentfirst}{\let\@afterindentfalse\@afterindenttrue
                             \@afterindenttrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
-\ExecuteOptions{oneandhalfspace}
+\ExecuteOptions{doublespace}
 \ProcessOptions
 \LoadClass[oneside,openany]{book}[1994/12/01]
 \ifx\undefined\thesistype
@@ -114,7 +114,22 @@
 \fi
 \RequirePackage[normalem]{ulem}
 \RequirePackage{setspace}
+\RequirePackage[compact]{titlesec}
 \RequirePackage{remreset}
+\RequirePackage{tocloft}
+
+% ellipsis conflicts with unicode support in lualatex
+% \RequirePackage{ellipsis}
+\RequirePackage{graphicx}
+% Determine if the image is too wide for the page.
+% http://tex.stackexchange.com/questions/12459/resize-large-images-that-exceed-page-margin-whilst-respecting-existing-scale
+\newsavebox\IBox
+\let\Includegrfx\includegraphics
+\renewcommand\includegraphics[2][]{%
+  \sbox\IBox{\Includegrfx[#1]{#2}}%
+  \ifdim\wd\IBox>\textwidth\resizebox{\textwidth}{!}{\usebox\IBox}\else
+                           \usebox\IBox\fi}
+
 \@removefromreset{footnote}{chapter}
 \newcommand{\thesisauthor}{Ima Gooden-Reddi}
 \newcommand{\thesisauthorlastname}{Gooden-Reddi}
@@ -122,11 +137,11 @@
 \newcommand{\thesismonth}{May}
 \newcommand{\thesisyear}{2009}
 \newcommand{\thesistitle}{Title}
-\newcommand{\thesisshorttitle}{Short Title}
 \newcommand{\thesissupervisor}{Professor Katherine Doe}
 \newcommand{\thesiscommittee}{Katherine Doe, Chair \\
 Michael Allen \\
 Robert Edward Thomas}
+\newcommand{\thesisschool}{School of Engineering \& Applied Science}
 \newcommand{\thesisdepartment}{Department of Computer Science and Engineering}
 \newcommand{\thesisfield}{Computer Science}
 
@@ -153,6 +168,8 @@ Robert Edward Thomas}
 \setlength{\chaptervspace}{\chapterpadding}
 \addtolength{\chaptervspace}{-\topmargin}
 \addtolength{\chaptervspace}{-60pt}
+\setlength{\intextsep}{32pt plus 8.0pt minus 8.0pt}
+
 \widowpenalty =10000
 \clubpenalty  =10000
 \brokenpenalty=10000
@@ -208,109 +225,122 @@ Robert Edward Thomas}
       \noindent Washington University in Saint Louis \\
       \thesismonth\ \thesisyear}}
 \newenvironment{thesistitlepage}{
-   \thispagestyle{empty}
-   \addtocounter{page}{-1}
-   \begingroup
-    %\advance\topmargin -18pt
+  \thispagestyle{empty}
+  \addtocounter{page}{-1}
+  \begingroup
     \thesistitlepagefont
-     \strut %\vfill
     \begin{center}
-    \begin{doublespace}
-      WASHINGTON UNIVERSITY IN ST.\ LOUIS \\
-      \begin{singlespace}
-        School of Engineering and Applied Science \\
-        \thesisdepartment
-      \end{singlespace}
-    \end{doublespace}
-
-    \vspace{0.5in}
-
     \begin{singlespace}
+
+      WASHINGTON UNIVERSITY IN ST.\@ LOUIS \\[\baselineskip]
+      \thesisschool \\
+      \thesisdepartment
+
+      \vspace{\stretch{.15}}
+
       \thesistype\ Examination Committee: \\
       \thesiscommittee
-    \end{singlespace}
 
-    \vspace{0.5in}
+      \vspace{\stretch{.55}}
 
-    \begin{singlespace}
-          {\thesistitle} \\
-          by \\
-          \thesisstudent \\
-    \end{singlespace}
+      {\thesistitle} \\
+      by \\
+      \thesisstudent
 
-    \vspace{0.75in}
+      \vspace{\stretch{.35}}
 
-    \begin{singlespace}
-      A \MakeLowercase{\thesistype}\ presented to the \\
-      Graduate School of Arts and Sciences \\
+      A \MakeLowercase{\thesistype}\ presented to \\
+      The Graduate School \\
       of Washington University in \\
       partial fulfillment of the \\
       requirements for the degree \\
-      of {\thesisdegree} \\
+      of {\thesisdegree}
 
-      \vspace{0.75in}
+      \vspace{\stretch{.75}}
 
       \thesismonth\ \thesisyear \\
-      Saint Louis, Missouri
+      St. Louis, Missouri
+
     \end{singlespace}
     \end{center}
-    \vfill %\strut
+    \vspace{-34pt}
     }
     {\newpage
    \endgroup}
 \newcommand{\thesistitlepagefont}{\fontsize{14}{14}\selectfont}
 \newcommand{\thesisstudent}{\thesisauthor\thesisauthorpreviousdegrees}
+
 \newenvironment{thesiscopyrightpage}{
     \pagestyle{empty}
     \strut \vfill
-    \vspace{-20mm}
-    \large{
     \begin{center}
       \copyright~\thesisyear, \thesiscopyrightholder
-    \end{center}}}
+    \end{center}}
     {\vfill \strut
     \newpage}
+
 \newenvironment{extranotespage}{
     \pagestyle{empty}}
     {\newpage}
+
 \newcommand{\thesiscopyrightholder}{\thesisauthor}
+
 \newcommand{\thesisabstracthead}{Abstract}
 \newenvironment{thesisabstract}{
-     %\setcounter{page}{2} % in revised edition abstract was moved.
-     \addcontentsline{toc}{chapter}{\thesisabstracthead}
-     \begin{center}
-        \begin{singlespace}
-\vbox to 18pt{}
-ABSTRACT OF THE \@uppercase{\thesistype} \\
-\vspace{18pt}
-\thesistitle \\
-by \\
-\thesisauthor \\
-\thesisdegree\ in \thesisfield \\
-        %Washington University in St.\ Louis, \thesismonth\ \thesisyear \\
-        %Research Advisor: \thesissupervisor
-        Washington University in St.\ Louis, \thesisyear \\
-        \thesissupervisor
-        \end{singlespace}
-     \end{center}
-     \vspace{-12pt}
-     \begin{doublespace}}
-     { \end{doublespace}
-     \newpage}
-\newenvironment{thesisshorttitlepage}{
-    \clearpage
-    \thispagestyle{empty}
-    \addtocounter{page}{-1}
-    \vbox to 4.1in{\vfil
-    {\small \textbf{\thesisshorttitle,
-      \thesisauthorlastname, \thesisdegreeabbreviation\ \thesisyear}
-}}}
+  %\setcounter{page}{2} % in revised edition abstract was moved.
+  \addcontentsline{toc}{chapter}{\thesisabstracthead}
+  \begin{center}
+  \begin{doublespace}
+    \vbox to 18pt{}
+    ABSTRACT OF THE \@uppercase{\thesistype} \\
+    % \vspace{18pt}
+    \thesistitle \\
+    by \\
+    \thesisauthor \\
+    \thesisdegree\ in \thesisfield \\
+    %Washington University in St. Louis, \thesismonth\ \thesisyear \\
+    %Research Advisor: \thesissupervisor
+    Washington University in St.~Louis, \thesisyear \\
+    \thesissupervisor
+  \end{doublespace}
+  \end{center}
+  \vspace{-48pt}
+  \begin{doublespace}}
+  { \end{doublespace}
+  \newpage}
 {\newpage}
+
+%% Format the table of contents, list of figures, list of tables, and list of abbreviations properly.
+\cftsetrmarg{2.55em}
+\cftsetpnumwidth{2.1em}
+\renewcommand{\cftdotsep}{0.5}
+
+\renewcommand{\cftfigpresnum}{Figure }
+\renewcommand{\cftfignumwidth}{5.7em}
+\renewcommand{\cftfigaftersnum}{:}
+
+\renewcommand{\cfttabpresnum}{Table }
+\renewcommand{\cfttabnumwidth}{5.7em}
+\renewcommand{\cfttabaftersnum}{:}
+
+\setlength{\cftbeforechapskip}{8pt}
+\setlength{\cftbeforesecskip}{6pt}
+\setlength{\cftbeforesubsecskip}{6pt}
+\setlength{\cftbeforefigskip}{8pt}
+\setlength{\cftbeforetabskip}{8pt}
+
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+% \renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
+
+\renewcommand\contentsname{Table of Contents}
+
 \renewcommand{\listoffigures}{%
   \chapter*{\listfigurename}%
   \addcontentsline{toc}{chapter}{\listfigurename}%
   \@starttoc{lof}%
 }
+
 \renewcommand{\listoftables}{%
   \chapter*{\listtablename}%
   \addcontentsline{toc}{chapter}{\listtablename}%
@@ -318,14 +348,6 @@ by \\
   \listoftablespostscript
 }
 \newcommand{\listoftablespostscript}{}
-\let\oldtoc=\@starttoc
-\renewcommand*{\@starttoc}[1]{%
-  {%
-    \setlength{\parskip}{0pt}%
-    \oldtoc{#1}%
-  }%
-}
-\renewcommand\contentsname{Table of Contents} 
 
 \renewcommand{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi%
                     \global\@topnum\z@
@@ -336,21 +358,9 @@ by \\
   \setcounter{chapter}{0}%
   \setcounter{section}{0}%
   \renewcommand{\@chapapp}{\appendixname}%
-  \renewcommand{\thechapter}{\Alph{chapter}}
+  \renewcommand{\thechapter}{\Alph{chapter}}%
+  \renewcommand{\thepage}{[\arabic{page}]}
   \@appendixtrue}
-
-\newlength{\appendixhspace}
-\setlength{\appendixhspace}{1.0in}
-\addtolength{\appendixhspace}{1.1em}
-
-\def\wrappedappendix#1#2{%
-  \refstepcounter{chapter}%
-  \addcontentsline{toc}{chapter}%
-  {\hbox to \appendixhspace{\appendixname\ \thechapter \hfill} #1}%
-  \@makechapterhead{#2}%
-}
-
-\providecommand{\texorpdfstring}[2]{{#1}}    % Added by Michael Hall
 
 \def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
                        \if@mainmatter
@@ -358,13 +368,10 @@ by \\
                          \typeout{\@chapapp\space\thechapter.}%
                          \if@appendix
                            \addcontentsline{toc}{chapter}%
-                                   %{\hbox to \appendixhspace{\appendixname\ \thechapter \hfill} #1}%
-                                   %{\hbox to \appendixhspace{\appendixname\ \protect\numberline{\thechapter}\hfill}#1}%
-                                   {\texorpdfstring{\hbox to \appendixhspace{\appendixname\ \protect\numberline{\thechapter}\hfill}#1}
-                                         {\appendixname\ #1}}     % Modified by Michael Hall
+                           {\appendixname~\protect\numberline{\thechapter:}~#1}%
                          \else
                            \addcontentsline{toc}{chapter}%
-                                   {Chapter \protect\numberline{\thechapter:}#1}%
+                           {Chapter \protect\numberline{\thechapter:}#1}%
                          \fi
                        \else
                          \addcontentsline{toc}{chapter}{#1}%
@@ -373,69 +380,21 @@ by \\
                       \addcontentsline{toc}{chapter}{#1}%
                     \fi
                     \chaptermark{#1}%
-                    \addtocontents{lof}{\protect\addvspace{10\p@}}%
-                    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+                    \addtocontents{lof}{\protect\addvspace{8\p@}}%
+                    \addtocontents{lot}{\protect\addvspace{8\p@}}%
                     \if@twocolumn
                       \@topnewpage[\@makechapterhead{#2}]%
                     \else
                       \@makechapterhead{#2}%
                       \@afterheading
                     \fi}
-\def\@makechapterhead#1{%
-  \vspace*{\chaptervspace}%
-  {\parindent \z@ \raggedright \normalfont
-    \ifnum \c@secnumdepth >\m@ne
-      \if@mainmatter
-        \huge\bfseries \@chapapp\space \thechapter
-        \par\nobreak
-        \vskip 20\p@
-      \fi
-    \fi
-    \interlinepenalty\@M
-    \Huge \bfseries #1\par\nobreak
-    \vskip 40\p@
-  }}
-\def\@makeschapterhead#1{%
-  \vspace*{\chaptervspace}%
-  {\parindent \z@ \raggedright
-    \normalfont
-    \interlinepenalty\@M
-    \Huge \bfseries  #1\par\nobreak
-    \vskip 40\p@
-  }}
-\renewcommand*{\l@chapter}[2]{%
-  \ifnum \c@tocdepth >\m@ne
-    \addpenalty{-\@highpenalty}%
-    \vskip 1.0em \@plus\p@
-    \setlength\@tempdima{1.5em}%
-    \begingroup
-      \parindent \z@ \rightskip \@pnumwidth
-      \parfillskip -\@pnumwidth
-      \leavevmode \bfseries
-      \advance\leftskip\@tempdima
-      \hskip -\leftskip
-      #1\nobreak%
-      \leaders\hbox{$\m@th \mkern \@dotsep mu.\mkern \@dotsep mu$}\hfill
-      \nobreak\hbox to\@pnumwidth{\hss #2}\par
-      \penalty\@highpenalty
-    \endgroup
-  \fi}
+
 \renewenvironment{quote}
   {\begin{singlespace}\list{}{\rightmargin\leftmargin}%
     \item\relax}
   {\endlist\end{singlespace}}
-\newenvironment{thesisauthorvita}
-   {
-    \clearpage
-    \begin{spacing}{1.1}
-    \addcontentsline{toc}{chapter}{\thesisvitahead}
-    \thesisvitatop}
-    {\end{spacing}}
-\newcommand{\thesisvitahead}{Vita}
-\newcommand{\thesisvitatop}{%
-    \begin{center}
-      {\huge\bfseries\thesisvitahead}
-    \end{center}}
+
+% NOTE: bibliography style not used for biblatex/biber, only bibtex
 \renewcommand{\bibname}{References}
 \renewenvironment{thebibliography}[1]
      {\chapter*{\bibname}%
@@ -463,6 +422,7 @@ by \\
       \sfcode`\.=\@m}
      {\def\@noitemerr{\@warning{Empty `thebibliography' environment}}%
       \endlist}
+
 \newcount\hour \newcount\minute
 \hour=\time  \divide \hour by 60
 \minute=\time

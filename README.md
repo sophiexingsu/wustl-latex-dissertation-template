@@ -1,31 +1,41 @@
-#WUSTL CSE Thesis template blank
+# Dissertation and Thesis Template
 
-##USE AT OWN RISK
+The is a LateX version of the disseration and thesis template for The Graduate School at Washington University in St. Louis. (http://graduateschool.wustl.edu/policies-and-guides)
 
-So this template has been passed around quite a bit,
-so I've updated it with the few formatting differences
-that I made when submitting (the ones that successfully
-passed the formatting screen).  I have no idea who originally
-wrote it, I received my copy from Michael Hall and subsequently
-modified it a bit to the form that is uploaded here.  
+Template version: July 2016
 
-I take absolutely no responsibility (nor do any contributors
-making updates) for the use of this template.  It is given
-as is.  You may take it, modify it etc. for your own use. 
+## About
 
+This document contains the guidelines for the proper formatting of dissertations and theses for doctoral and master’s degree-seeking students within the Graduate School at Washington University in St. Louis. The document is formatted using the same guidelines it describes.  Consequently, by making an extra copy of this document, you can use it as a template in which you can replace the original text with your own while still retaining the general formatting.
 
-Add ons that are useful are found in tools, some various
-scripts to embed fonts using ghostscript, etc.  
+It is a good idea to read through this document carefully before you save it as a template and begin.  Please remember that all doctoral and master’s students are ultimately responsible for meeting the Graduate School (GS) formatting guidelines. If there is a particular issue that is not found in this template or the Dissertation/Thesis Guide, your committee or discipline should decide how it will be addressed.
 
+Be certain to use your own full name (as recorded in [WebSTAC](https://acadinfo.wustl.edu/)) where appropriate. Make sure you use the month and year your degree is officially to be earned on the title page, abstract page and, if included, vita page(s).
 
-Here are the notes that you should follow when
-doing various things, feel free to update if 
-you find any other useful tips.
+Once completed, you will need to submit your document as a PDF electronically, as per the [Doctoral Dissertation Guide](http://graduateschool.wustl.edu/files/graduate/Doctoral_Dissertation_Guide.pdf) and [Master’s Thesis Guide](http://graduateschool.wustl.edu/files/graduate/Masters_Thesis_Guide.pdf), which also can be found on the Graduate School website.
 
-*extra explanatory text - there are many \ifelse statements
-within the LaTeX files which can be uncommented to get rid
-of most of the explanations
+## How to Use this Template
 
-*Captions - use the square brackets to keep the table of
-figures short, otherwise you'll end up with really really
-long table of figures, ref: http://tex.stackexchange.com/questions/11579/captions-for-figures-in-listoffigures
+This template is a LaTeX version of The Graduate School's Microsoft Word template. To use, make a copy all of the files (or fork this repository) and start replacing the contents with your dissertation or thesis.
+
+You will need a texlive installation. You will need to use LuaLaTeX or PDFLatex for this template. However, LuaLaTeX is preferred due to its built in support of special characters.
+
+For your bibliography you will need Biber installed. Please note that this template uses Biblatex (not BibTeX). Biblatex is considered a replacement for BibTeX and supports special characters and URLs in citations.
+
+You will also need Latexmk. Latexmk compiles LaTeX documents the correct number of times. Many makefiles for LaTeX documents often compile twice. Sometimes this is unnecessary, other times it is not enough. Latexmk will correctly determine the number of compilations necessary to produce a correct document.
+
+When including figures, please use PDF files whenever possible. If it's not possible, add a rule to the `Makefile` and `latexmkrc` files to convert the image to PDF during compilation.
+
+## Compiling
+
+To compile: `make`
+
+To clean build files, but not the compiled document: `make clean`
+
+To clean all files, included the compiled document: `make distclean`
+
+## Contributing
+
+*Please help keep this template up to date with The Graduate School's Microsoft Word template.*
+
+If you would like to submit changes to this template, please fork this repository and submit a pull request.

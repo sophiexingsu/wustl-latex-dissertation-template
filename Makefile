@@ -1,37 +1,38 @@
-MAINFILE := thesis-main
-ZIPFILE := style-guide
+TARGET = thesis
 
-all: pdf
-dvi: $(MAINFILE).dvi
-pdf: $(MAINFILE).pdf
-zip: pdf $(ZIPFILE).zip
+CLEAN_FILES := $(TARGET).bbl $(TARGET).run.xml $(TARGET).log
+DIST_CLEAN_FILES := $(TARGET).pdf $(TARGET).synctex.gz
 
-$(ZIPFILE).zip: *.pdf *.eps *.tex *.bib *.cls *.sty Makefile
-	rm -rf $(ZIPFILE)
-	mkdir $(ZIPFILE)
-	cp $^ $(ZIPFILE)
-	zip -9 -r $@ $(ZIPFILE)/
-	rm -rf $(ZIPFILE)
+# latexmk correctly handles circular dependencies in LaTeX. It also compiles
+# as many times as required. This is a better choice than calling LaTeX manually
+# two or three times in a Makefile
+LATEXMK := latexmk
 
-$(MAINFILE).pdf: *.tex *.bib *.cls
-	pdflatex $(MAINFILE)
-	bibtex $(MAINFILE)
-	pdflatex $(MAINFILE)
-	pdflatex $(MAINFILE)
-	
-$(MAINFILE).dvi: *.tex *.bib *.cls
-	latex $(MAINFILE)
-	bibtex $(MAINFILE)
-	latex $(MAINFILE)
-	latex $(MAINFILE)
+# LuaLaTeX supports modern font encodings (UTF8). This solves many issues with
+# special characters in references or citations.
+# If you want to use pdflatex instead of lualatex, remove the '-lualatex' switch.
+LATEXMK_ARGS := -silent -interaction=nonstopmode -f -cd -file-line-error -recorder -synctex=1 -pdf -lualatex
 
-clean:
-	- rm -f *~
-	- rm -f *.aux *.log
-	- rm -f *.bbl *.blg
-	- rm -f *.lof *.lot *.toc
+.PHONY: FORCE all clean distclean
 
-veryclean: clean
-	- rm -f *.dvi
-	- rm -f $(MAINFILE).pdf
-	- rm -f $(ZIPFILE).zip
+.DEFAULT_GOAL := all
+all : $(TARGET).pdf
+
+$(TARGET).pdf : FORCE
+	$(LATEXMK) $(LATEXMK_ARGS) $(TARGET).tex
+
+%.pdf : %.tex
+	$(LATEXMK) $(LATEXMK_ARGS) $<
+
+clean :
+	-$(LATEXMK) $(LATEXMK_ARGS) -f -c $(TARGET)
+	-rm -f $(CLEAN_FILES)
+
+distclean :
+	-$(LATEXMK) $(LATEXMK_ARGS) -f -C $(TARGET)
+	-rm -f $(CLEAN_FILES)
+	-rm -f $(DIST_CLEAN_FILES)
+
+# convert graphics based on rules in latexmkrc
+%.pdf : %.svg
+	inkscape --export-area-page --export-dpi=300 --export-text-to-path --export-pdf="$@" "$<"
