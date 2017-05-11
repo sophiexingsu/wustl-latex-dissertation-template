@@ -1,6 +1,6 @@
 # Dissertation and Thesis Template
 
-The is a LateX version of the disseration and thesis template for The Graduate School at Washington University in St. Louis. (http://graduateschool.wustl.edu/policies-and-guides)
+The is a LaTeX version of the dissertation and thesis template for The Graduate School at Washington University in St. Louis. (http://graduateschool.wustl.edu/policies-and-guides)
 
 Template version: July 2016
 
