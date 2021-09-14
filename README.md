@@ -26,6 +26,11 @@ You will also need Latexmk. Latexmk compiles LaTeX documents the correct number 
 
 When including figures, please use PDF files whenever possible. If it's not possible, add a rule to the `Makefile` and `latexmkrc` files to convert the image to PDF during compilation.
 
+
+## Installation
+
+    sudo tlmgr install lualatex-math stix2-otf
+
 ## Compiling
 
 To compile: `make`

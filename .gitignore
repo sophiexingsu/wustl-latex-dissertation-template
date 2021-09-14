@@ -1,6 +1,8 @@
 ## Do not include build files
 *-concordance.tex
 
+thesis_demo.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
