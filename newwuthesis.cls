@@ -127,6 +127,19 @@
 }}
 
 
+% ---- Typeset table of contents ------------------------------------------------
+\setrmarg{2em}
+\setpnumwidth{0.5em}
+
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\cftdotsep}{0.5}
+\renewcommand*{\cftchapterfont}{\normalfont}
+\renewcommand*{\cftchapterpagefont}{\normalfont}
+\renewcommand*{\cftchapterleader}{\cftchapterfont\cftdotfill{\cftchapterdotsep}}
+\renewcommand*{\cftchapterdotsep}{\cftdotsep}
+\renewcommand\cftchaptername{\chaptername~}
+
+
 % ---- Typeset dedication page ------------------------------------------------
 \newcommand{\thesisdedication}[1]{{%
     \clearpage
