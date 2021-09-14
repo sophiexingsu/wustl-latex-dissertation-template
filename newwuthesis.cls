@@ -80,8 +80,9 @@
 \newcommand{\setthesisschool}[1]{\def\thesisschool{#1}}
 \newcommand{\setthesisdepartment}[1]{\def\thesisdepartment{#1}}
 
-\newcommand{\thetitlepage}{{%
+\newcommand{\thetitlepage}{%
     \clearpage
+    \begin{titlingpage}
     \thispagestyle{empty}
     \SingleSpacing
     \setSingleSpace{1.15}
@@ -109,5 +110,6 @@
     \vfill
     {\degreeearndate}\\
     St.~Louis, Missouri
+    \end{titlingpage}
     \clearpage%
-}}
+}
