@@ -37,12 +37,14 @@
 \setulmarginsandblock{1in}{*}{1}
 
 % Header and footer location
-% Note though the style specifies that nothing can be inside the page margins, the example template
+% Note though the style specifies that nothing can be inside the page margins, the style guide
 % doc file actually places the page numbers in the margin. The settings below mimics the doc.
 \setheadfoot{18pt}{18pt}
 \setheaderspaces{0.5in}{*}{*}
 
-\setmarginnotes{1em}{6em}{\onelineskip}
+% Margin note location
+% Note that the style guide prohibits margin notes.
+\setmarginnotes{1em}{4em}{\onelineskip}
 
 % Default to double spacing for the document
 \DoubleSpacing
