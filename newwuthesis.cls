@@ -26,10 +26,11 @@
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{newwuthesis}[2021/09/12 WUSTL thesis/dissertation template]
 
+
 % ---- Parse Options ----------------------------------------------------------
 
 
-% ---- Define Page Layout ----------------------------------------------------------
+% ---- Define Page Layout -----------------------------------------------------
 \LoadClass[letterpaper,12pt,openany,oneside,onecolumn]{memoir}
 
 % Page margin
@@ -55,3 +56,50 @@
 % Unicode fonts
 \RequirePackage{fontspec}
 \RequirePackage{unicode-math}
+
+
+% ---- Typeset Title page -----------------------------------------------------
+\newcommand{\settitle}[1]{\def\thesistitle{#1}}
+\newcommand{\setauthor}[1]{\def\thesisauthor{#1}}
+\newcommand{\setthesistype}[1]{\def\thesistype{#1}}
+\newcommand{\setthesisdegree}[1]{\def\thesisdegree{#1}}
+\newcommand{\setthesisdegreeabbrv}[1]{\def\thesisdegreeabbrv{#1}}
+% Degree officially earn date must be in December, May, or August
+\newcommand{\setdegreeearndate}[1]{\def\degreeearndate{#1}}
+
+\newcommand{\setthesisadvisor}[1]{\def\thesisadvisor{#1}}
+\newcommand{\setthesiscommittee}[1]{\def\thesiscommittee{#1}}
+\newcommand{\setthesisschool}[1]{\def\thesisschool{#1}}
+\newcommand{\setthesisdepartment}[1]{\def\thesisdepartment{#1}}
+
+\newcommand{\thetitlepage}{%
+    \clearpage
+    \thispagestyle{empty}
+    \SingleSpacing
+    \setSingleSpace{1.15}
+    \centering
+    WASHINGTON UNIVERSITY IN ST.~LOUIS \\[\onelineskip]
+    \thesisschool \\
+    \thesisdepartment \\[3\onelineskip]
+
+    \thesistype\ Examination Committee: \\
+    \thesiscommittee
+
+    \vfill
+    \thesistitle \\
+    by\\
+    \thesisauthor \\[4\onelineskip]
+
+    A \MakeLowercase{\thesistype} presented to \\
+    The Graduate School \\
+    of Washington University in \\
+    partial fulfillment of the \\
+    requirements for the degree \\
+    of \thesisdegree
+
+    \vfill
+    \vfill
+    {\degreeearndate}\\
+    St.~Louis, Missouri
+    \clearpage
+}

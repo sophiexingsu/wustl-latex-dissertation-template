@@ -14,7 +14,32 @@
 % Show Layout
 \usepackage{layout}
 
+% Configure title page
+\settitle{A Mock Thesis on the Proper Formatting of Dissertations and Theses for\\ Arts \& Sciences Graduate Students}
+\setauthor{Paige Turner}
+\setthesistype{Dissertation}
+\setthesisdegree{Doctor of Philosophy}
+\setthesisdegreeabbrv{Ph.D.}
+% Degree officially earn date must be in December, May, or August
+\setdegreeearndate{May 2017}
+\setthesisadvisor{%
+    Katherine Davidsen, Chair\\
+    Michael Randolf, Co-Chair}
+\setthesiscommittee{%
+    Katherine Davidsen, Chair\\
+    Michael Randolf, Co-Chair\\
+    Richard Lewis\\
+    Hillary O’Connell\\
+    Jack Taylor}
+\setthesisschool{Division of Biology and Biomedical Sciences}
+\setthesisdepartment{Neurosciences}
+
+
 \begin{document}
+
+
+\thetitlepage
+
 
 \begin{equation}
     \label{eq:maxwell}
@@ -29,8 +54,8 @@
 \[
     \oint_C {E \cdot d\ell = - \frac{d}{{dt}}} \int_S {B_n dA}
 \]
-\newpage
 
+\newpage
 L45 = \the\xlvchars\par
 L65 = \the\lxvchars
 
