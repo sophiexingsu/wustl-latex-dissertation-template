@@ -44,6 +44,9 @@
 
 \setmarginnotes{1em}{6em}{\onelineskip}
 
+% Default to double spacing for the document
+\DoubleSpacing
+
 % Math environment
 \RequirePackage{amsmath}
 
