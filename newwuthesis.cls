@@ -58,6 +58,14 @@
 \RequirePackage{unicode-math}
 
 
+% ---- Main page style --------------------------------------------------------
+\makepagestyle{main}
+   \makeevenfoot{main}{}{\thepage}{}
+   \makeoddfoot{main}{}{\thepage}{}
+
+% Default page style
+\pagestyle{plain}
+
 % ---- Typeset Title page -----------------------------------------------------
 \newcommand{\settitle}[1]{\def\thesistitle{#1}}
 \newcommand{\setauthor}[1]{\def\thesisauthor{#1}}
