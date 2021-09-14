@@ -114,6 +114,18 @@
     \clearpage%
 }
 
+% ---- Thesis copyright page ------------------------------------------------
+\newcommand{\thesiscopyright}[1]{{%
+    \clearpage
+    \thispagestyle{empty}
+    \mbox{}
+    \vfill
+    \centering
+    #1
+    \vfill
+    \clearpage%
+}}
+
 
 % ---- Typeset dedication page ------------------------------------------------
 \newcommand{\thesisdedication}[1]{{%
