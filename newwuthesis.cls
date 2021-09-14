@@ -28,11 +28,23 @@
 
 % ---- Parse Options ----------------------------------------------------------
 
+
+% ---- Define Page Layout ----------------------------------------------------------
 \LoadClass[letterpaper,12pt,openany,oneside,onecolumn]{memoir}
 
+% Page margin
 \setlrmarginsandblock{1in}{1in}{*}
 \setulmarginsandblock{1in}{*}{1}
 
+% Header and footer location
+% Note though the style specifies that nothing can be inside the page margins, the example template
+% doc file actually places the page numbers in the margin. The settings below mimics the doc.
+\setheadfoot{18pt}{18pt}
+\setheaderspaces{0.5in}{*}{*}
+
+\setmarginnotes{1em}{6em}{\onelineskip}
+
+% Math environment
 \RequirePackage{amsmath}
 
 % Unicode fonts
