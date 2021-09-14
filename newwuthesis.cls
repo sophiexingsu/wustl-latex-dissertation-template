@@ -130,7 +130,6 @@
 % ---- Typeset dedication page ------------------------------------------------
 \newcommand{\thesisdedication}[1]{{%
     \clearpage
-    \thispagestyle{empty}
     \mbox{}
     \vfill
     \centering
