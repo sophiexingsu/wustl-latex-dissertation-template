@@ -146,8 +146,7 @@
     \thispagestyle{empty}
     \mbox{}
     \vfill
-    \centering
-    #1
+    \centering #1
     \vfill
     \clearpage%
 }}
@@ -193,8 +192,7 @@
     \clearpage
     \mbox{}
     \vfill
-    \centering
-    #1
+    \centering #1
     \vfill
     \clearpage%
 }}
