@@ -21,6 +21,9 @@ This template is a LaTeX version of The Graduate School's Microsoft Word templat
 You will need a TeX Live installation (2020 and later) with LuaLaTeX for this template. If you use the BasicTeX distribution with only minimal packages, install the additional packages below:
 
     sudo tlmgr install \
+        latexmk \
+        biber biblatex biblatex-nature \
+        csquotes \
         lualatex-math stix2-otf \
         threeparttable makecell
 
