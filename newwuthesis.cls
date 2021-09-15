@@ -57,9 +57,6 @@
 \RequirePackage{fontspec}
 \RequirePackage{unicode-math}
 
-% Underline improvement
-\RequirePackage{ulem}
-
 
 % ---- Main page style --------------------------------------------------------
 \makepagestyle{main}
