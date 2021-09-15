@@ -149,8 +149,8 @@
 
 
 % ---- Typeset table of contents ---------------------------------------------
-\setrmarg{2em}
-\setpnumwidth{0.5em}
+\setrmarg{2.5em}
+\setpnumwidth{1.5em}
 
 \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\cftdotsep}{0.5}
@@ -158,7 +158,10 @@
 \renewcommand*{\cftchapterpagefont}{\normalfont}
 \renewcommand*{\cftchapterleader}{\cftchapterfont\cftdotfill{\cftchapterdotsep}}
 \renewcommand*{\cftchapterdotsep}{\cftdotsep}
-\renewcommand\cftchaptername{\chaptername~}
+\renewcommand*{\cftchaptername}{\chaptername}
+\renewcommand*{\cftchapterpresnum}{\ }
+\renewcommand*{\cftchapteraftersnum}{:}
+
 
 \maxtocdepth{subsection}  % put 3 levels into the ToC
 
