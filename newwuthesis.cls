@@ -57,6 +57,10 @@
 \RequirePackage{fontspec}
 \RequirePackage{unicode-math}
 
+% Localization specific settings
+\RequirePackage[english]{babel}
+% Quotation style
+\RequirePackage[autostyle,english=american]{csquotes}
 
 % ---- Main page style --------------------------------------------------------
 \makepagestyle{main}
@@ -65,6 +69,9 @@
 
 % Default page style
 \pagestyle{plain}
+
+% Quotation style
+\AtBeginEnvironment{quote}{\OnehalfSpacing}
 
 
 % ---- Section numbering and style -----------------------------------------------------
