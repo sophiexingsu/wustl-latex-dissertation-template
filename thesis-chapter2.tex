@@ -77,36 +77,19 @@ Do not let figures or tables spill out into the margins.
 \end{enumerate}
 
 \begin{figure}
-  \includegraphics{figures/just-a-figure}
-  \caption[Left justified figure]{You can left justify your figure.}
-  \label{fig:left-justified}
+    \includegraphics{figures/just-a-figure}
+    \captionstyle{\raggedright}
+    \caption[Left justified figure]{You can left justify your figure.}
+    \label{fig:left-justified}
 \end{figure}
 
 \begin{figure}
-  \centering
-  \includegraphics{figures/just-a-figure}
-  \caption[Centered figure]{You can center your figure.}
-  \label{fig:centered}
+    \centering
+    \includegraphics{figures/just-a-figure}
+    \caption[Centered figure]{You can center your figure.}
+    \label{fig:centered}
 \end{figure}
 
-This \LaTeX template is configured to produce a PDF.
-Your figures should be PDF files like Figure~\ref{fig:pdf}.
-If you do not have a PDF version of your figure, \emph{latexmk} and \emph{emph} can convert the image to PDF for you as shown in Figure~\ref{fig:svg}.
-
-\begin{figure}
-  \centering
-  \includegraphics{figures/just-a-plot}
-  \caption[Figures must be PDF]{All figures must be PDFs.}
-  \label{fig:pdf}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics{figures/just-a-graph}
-  \caption[SVG converted to PDF]{the \texttt{Makefile} and \texttt{latexmkrc} files include a rule to convert SVG images to PDF images.
-	\emph{latexmk} will convert EPS files for you too.}
-  \label{fig:svg}
-\end{figure}
 
 \section{Lists}
 
