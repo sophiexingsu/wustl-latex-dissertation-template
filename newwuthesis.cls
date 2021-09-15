@@ -88,13 +88,22 @@
     \renewcommand*{\chaptitlefont}{\normalfont\huge\bfseries\rmfamily}
 
     \renewcommand*{\printchaptername}{%
-        \centering\chapnamefont\chaptername\ }
+        \OnehalfSpacing\centering\chapnamefont\chaptername\ }
+
     \renewcommand*{\printchapternum}{%
         \thechapter:\ }%
-
-    \renewcommand*{\printchapternonum}{\centering}
+    \renewcommand*{\printchapternonum}{\OnehalfSpacing\centering}
 }
 \chapterstyle{thesis}
+
+% Appendix style
+\addto{\captionsenglish}{%
+    \renewcommand{\appendixname}{Appendix}}
+\makechapterstyle{thesisappendix}{%
+    \chapterstyle{thesis}
+    \renewcommand*{\printchaptername}{%
+        \OnehalfSpacing\centering\chapnamefont\appendixname\ }
+}
 
 
 % ---- Bibliography/References style ------------------------------------------
@@ -178,6 +187,7 @@
 \renewcommand*{\cftchaptername}{\chaptername}
 \renewcommand*{\cftchapterpresnum}{\ }
 \renewcommand*{\cftchapteraftersnum}{:}
+\renewcommand*{\cftappendixname}{\appendixname}
 
 \setlength{\cftbeforechapterskip}{6pt plus 1pt minus 1pt}
 \setlength{\cftbeforesectionskip}{6pt plus 1pt minus 1pt}
