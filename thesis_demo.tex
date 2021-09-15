@@ -14,6 +14,17 @@
 % Show Layout
 \usepackage{layout}
 
+% Hyperlinks
+\RequirePackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+% Tables
+\usepackage{threeparttable}
+\usepackage{makecell}  % allow multiple lines in a table cell
+
+% Graphics
+\usepackage{graphicx}
+
 % Configure title page
 \settitle{A Mock Thesis on the Proper Formatting of Dissertations and Theses for\\ Arts \& Sciences Graduate Students}
 \setauthor{Paige Turner}
@@ -51,6 +62,8 @@
 
 \mainmatter
 \pagestyle{main}
+\include{thesis-chapter1}
+\include{thesis-chapter2}
 
 \chapter{{\LaTeX} test}
 \begin{equation}

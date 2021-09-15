@@ -29,7 +29,8 @@ When including figures, please use PDF files whenever possible. If it's not poss
 
 ## Installation
 
-    sudo tlmgr install lualatex-math stix2-otf
+    sudo tlmgr install lualatex-math stix2-otf \
+        threeparttable makecell
 
 ## Compiling
 
