@@ -70,10 +70,9 @@
 \begin{document}
 
 \frontmatter
-\thetitlepage               % Title page
-
-% Thesis copyright page
-\thesiscopyright{\textcopyright~\degreeearnyear, Paige Turner}
+\thetitlepage                       % Title page
+\thesiscopyright{%                  % Thesis copyright page
+    \textcopyright~\degreeearnyear, Paige Turner}
 
 \SingleSpacing*
 \setSingleSpace{1.15}
@@ -83,7 +82,8 @@
 
 \DoubleSpacing
 \include{thesis-acknowledgments}    % Acknowledgements
-\thesisdedication{Dedicated to my parents.}     % Dedication page
+\thesisdedication{%                 % Dedication page
+    Dedicated to my parents.}
 
 \begin{abstract}
 After removing these comments, begin typing the body of your abstract here, double-spaced.  Your
