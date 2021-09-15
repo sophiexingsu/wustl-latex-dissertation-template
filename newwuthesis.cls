@@ -99,7 +99,8 @@
 \newcommand{\setthesisdegree}[1]{\def\thesisdegree{#1}}
 \newcommand{\setthesisdegreeabbrv}[1]{\def\thesisdegreeabbrv{#1}}
 % Degree officially earn date must be in December, May, or August
-\newcommand{\setdegreeearndate}[1]{\def\degreeearndate{#1}}
+\newcommand{\setdegreeearnmonth}[1]{\def\degreeearnmonth{#1}}
+\newcommand{\setdegreeearnyear}[1]{\def\degreeearnyear{#1}}
 
 \newcommand{\setthesisadvisor}[1]{\def\thesisadvisor{#1}}
 \newcommand{\setthesiscommittee}[1]{\def\thesiscommittee{#1}}
@@ -134,7 +135,7 @@
 
     \vfill
     \vfill
-    {\degreeearndate}\\
+    \degreeearnmonth\ \degreeearnyear\\
     St.~Louis, Missouri
     \end{titlingpage}
     \clearpage%
@@ -153,7 +154,7 @@
 }}
 
 
-% ---- Table of contents (ToC) ---------------------------------------
+% ---- Table of contents (ToC) -----------------------------------------------
 \setrmarg{3em}
 \setpnumwidth{1.5em}
 
@@ -174,7 +175,7 @@
 \setlength{\cftbeforesubsectionskip}{6pt plus 1pt minus 1pt}
 
 
-% ---- List of figures (LoF), and list of tables (LoT) ---------------
+% ---- List of figures (LoF), and list of tables (LoT) -----------------------
 \addtodef{\listoffigures}{\clearpage}{}
 \renewcommand*{\cftfigurename}{\figurename}
 \renewcommand*{\cftfigurepresnum}{\ }
@@ -191,7 +192,7 @@
 \newcommand{\thesisacknowledgements}{\pretoctitle{Acknowledgments}}
 
 
-% ---- Acknowledgements page -----------------------------------------------
+% ---- Acknowledgements page -------------------------------------------------
 \newcommand{\thesisacknowledgments}{%
     \chapter*{Acknowledgments}
     \vspace*{-1.5in}\phantomsection\vspace*{1.5in}
@@ -199,7 +200,7 @@
 }
 
 
-% ---- Dedication page -----------------------------------------------
+% ---- Dedication page -------------------------------------------------------
 \newcommand{\thesisdedication}[1]{{%
     \clearpage
     \mbox{}
@@ -208,3 +209,34 @@
     \vfill
     \clearpage%
 }}
+
+
+% ---- Abstract page ---------------------------------------------------------
+\newenvironment{thesisabstract}
+    {\phantomsection
+    \vspace*{-1.5in}\phantomsection\vspace*{1.5in}
+    \addcontentsline{toc}{chapter}{Abstract}
+    \begin{abstract}}
+    {\end{abstract}}
+\renewcommand{\absnamepos}{center}
+\renewcommand{\abstractname}{%
+    ABSTRACT OF THE \MakeUppercase{\thesistype}\\
+    \thesistitle \\
+    by \\
+    \thesisauthor \\
+    \thesisschool \\
+    \thesisdepartment \\
+    Washington University in St.~Louis, \degreeearnyear \\
+    \thesisadvisor%
+}
+\renewcommand{\abstractnamefont}{%
+    \vspace{-\beforechapskip}
+    \vspace{-\baselineskip}
+    \normalfont\normalsize%
+}
+\renewcommand{\abstracttextfont}{\normalfont\normalsize}
+\AtBeginDocument{
+    \setlength{\absleftindent}{0em}
+    \setlength{\absparindent}{0em}
+    \setlength{\absrightindent}{0em}
+}
