@@ -2,7 +2,7 @@
 
 The is a LaTeX version of the dissertation and thesis template for The Graduate School at Washington University in St. Louis. (http://graduateschool.wustl.edu/policies-and-guides)
 
-Template version: July 2016
+Template version: July 2018
 
 ## About
 
@@ -18,30 +18,52 @@ Once completed, you will need to submit your document as a PDF electronically, a
 
 This template is a LaTeX version of The Graduate School's Microsoft Word template. To use, make a copy all of the files (or fork this repository) and start replacing the contents with your dissertation or thesis.
 
-You will need a texlive installation. You will need to use LuaLaTeX or PDFLatex for this template. However, LuaLaTeX is preferred due to its built in support of special characters.
+You will need a TeX Live installation (2020 and later) with LuaLaTeX for this template. If you use the BasicTeX distribution with only minimal packages, install the additional packages below:
 
-For your bibliography you will need Biber installed. Please note that this template uses Biblatex (not BibTeX). Biblatex is considered a replacement for BibTeX and supports special characters and URLs in citations.
+    sudo tlmgr install \
+        lualatex-math stix2-otf \
+        threeparttable makecell
+
+For your bibliography, you will need Biber installed. Please note that this template uses Biblatex (not BibTeX). Biblatex is considered a replacement for BibTeX and supports special characters and URLs in citations.
 
 You will also need Latexmk. Latexmk compiles LaTeX documents the correct number of times. Many makefiles for LaTeX documents often compile twice. Sometimes this is unnecessary, other times it is not enough. Latexmk will correctly determine the number of compilations necessary to produce a correct document.
 
-When including figures, please use PDF files whenever possible. If it's not possible, add a rule to the `Makefile` and `latexmkrc` files to convert the image to PDF during compilation.
+When including figures, please use PDF files whenever possible.
 
+## Compiling the Document
 
-## Installation
+To compile, `latexmk -lualatex thesis.tex`
 
-    sudo tlmgr install lualatex-math stix2-otf \
-        threeparttable makecell
+To clean build files, but not the compiled document: `latexmk -C`
 
-## Compiling
+To clean all files, included the compiled document: `latexmk -CA`
 
-To compile: `make`
+## Differences to the Word Template
 
-To clean build files, but not the compiled document: `make clean`
+While this template fully complies with the school's style guide, there are some differences to the official word template. Please compare the compiled output at `thesis_demo.pdf` to the official template at `guide/dissertation_and_thesis_template_2018.pdf`.
 
-To clean all files, included the compiled document: `make distclean`
+Notable changes:
+- No underline in chapter titles
+- Header margins and font sizes are different
 
 ## Contributing
 
 *Please help keep this template up to date with The Graduate School's Microsoft Word template.*
 
 If you would like to submit changes to this template, please fork this repository and submit a pull request.
+
+## License
+
+LaTeX Project Public License version 1.3
+
+## Change Log
+Version 2021-09-12:
+
+- Rewrite of the original `wuthesis.cls` file using memoir package
+
+## Origin of this template
+The template was rewritten by Liang-Bo Wang in 2021 based on the GitHub repo [harmsk/wustl-latex-dissertation-template]. Hence the document class was renamed from `wuthesis.cls` to `wustlthesis.cls` due to the likely incompatibility and style changes.
+
+While it's difficult to fully trace the origins of `wuthesis.cls`, based on the file comments, Kevin Ruland created the first version of the WashU Sever Institute thesis class `wuthesis.dtx` (later converted to `wuthesis.cls`) in 1995 based on UT Austin's Thesis Style File v2 by Dinesh Das in 1995. Revisions were made by Long Duan in 1996, by Greg Hackmann in 2005, 2007, and 2008, and finally by Michael Hall, David Lu in 2014.
+
+[harmsk/wustl-latex-dissertation-template]: https://github.com/harmsk/wustl-latex-dissertation-template/tree/f5386bb93dee6e5c0c5b1faed317b687be0f199a

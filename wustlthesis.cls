@@ -11,17 +11,6 @@
 %
 % This work consists of the files wuthesis.cls.
 
-% ---- Origin of this template ------------------------------------------------
-% While it's difficult to fully trace the origins, based on the comments in the original
-% wuthesis.cls file, Kevin Ruland created the WashU Sever Institute thesis class wuthesis.dtx (later
-% converted to wuthesis.cls) in 1995 based on UT Austin's Thesis Style File v2 by Dinesh Das in
-% 1995. Revisions were made by Long Duan in 1996, by Greg Hackmann in 2005, 2007, and 2008, and
-% finally by Michael Hall, David Lu in 2014.
-
-% ---- Change Log -------------------------------------------------------------
-% Version 2021-09-12
-%   * Initial commit
-%   * Rewrite of the original wuthesis.cls file
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{wustlthesis}[2021/09/12 WUSTL thesis/dissertation template]
