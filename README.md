@@ -43,7 +43,10 @@ To clean all files, included the compiled document: `latexmk -CA`
 
 ## Differences to the Word Template
 
-While this template fully complies with the school's style guide, there are some differences to the official word template. Please compare the compiled output at `thesis_demo.pdf` to the official template at `guide/dissertation_and_thesis_template_2018.pdf`.
+While this template fully complies with the school's style guide, there are some differences to the official word template. Please compare the compiled output at [`thesis_demo.pdf`] to the official template at [`guide/dissertation_and_thesis_template_2018.pdf`][template_pdf].
+
+[`thesis_demo.pdf`]: https://github.com/ccwang002/wustl-latex-dissertation-template/blob/master/thesis_demo.pdf
+[template_pdf]: https://github.com/ccwang002/wustl-latex-dissertation-template/blob/master/guide/dissertation_and_thesis_template_2018.pdf
 
 Notable changes:
 - No underline in chapter titles
