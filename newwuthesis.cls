@@ -27,9 +27,6 @@
 \ProvidesClass{newwuthesis}[2021/09/12 WUSTL thesis/dissertation template]
 
 
-% ---- Parse Options ----------------------------------------------------------
-
-
 % ---- Define Page Layout -----------------------------------------------------
 \LoadClass[letterpaper,12pt,openany,oneside,onecolumn]{memoir}
 
@@ -47,9 +44,6 @@
 % Note that the style guide prohibits margin notes.
 \setmarginnotes{1em}{4em}{\onelineskip}
 
-% Default to double spacing for the document
-\DoubleSpacing
-
 % Math environment
 \RequirePackage{amsmath}
 
@@ -59,6 +53,7 @@
 
 % Localization specific settings
 \RequirePackage[english]{babel}
+
 % Quotation style
 \RequirePackage[autostyle,english=american]{csquotes}
 
@@ -74,43 +69,78 @@
 % Quotation style
 \AtBeginEnvironment{quote}{\OnehalfSpacing}
 
-
-% ---- Section numbering and style -----------------------------------------------------
-% Section numbering down to subsection
-\setsecnumdepth{subsection}
-\maxsecnumdepth{subsection}
-
 % Chapter style
 \makechapterstyle{thesis}{%
     \chapterstyle{tandh}
-    \renewcommand*{\chapnamefont}{\normalfont\huge\bfseries\rmfamily}
-    \renewcommand*{\chapnumfont}{\normalfont\huge\bfseries\rmfamily}
-    \renewcommand*{\chaptitlefont}{\normalfont\huge\bfseries\rmfamily}
-
+    \renewcommand*{\chapnamefont}{\normalfont\huge\bfseries}
+    \renewcommand*{\chapnumfont}{\normalfont\huge\bfseries}
+    \renewcommand*{\chaptitlefont}{\normalfont\huge\bfseries}
     \renewcommand*{\printchaptername}{%
         \OnehalfSpacing\centering\chapnamefont\chaptername\ }
-
-    \renewcommand*{\printchapternum}{%
-        \thechapter:\ }%
+    \renewcommand*{\printchapternum}{\thechapter:\ }
     \renewcommand*{\printchapternonum}{\OnehalfSpacing\centering}
 }
+
+% Default chapter style
 \chapterstyle{thesis}
 
 % Appendix style
-\addto{\captionsenglish}{%
-    \renewcommand{\appendixname}{Appendix}}
+\addto{\captionsenglish}{\renewcommand{\appendixname}{Appendix}}
 \makechapterstyle{thesisappendix}{%
     \chapterstyle{thesis}
     \renewcommand*{\printchaptername}{%
         \OnehalfSpacing\centering\chapnamefont\appendixname\ }
 }
+\addtodef{\appendix}{}{\chapterstyle{thesisappendix}}
+
+% Section numbering down to subsection
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsection}
 
 
 % ---- Bibliography/References style ------------------------------------------
 \setlength{\bibitemsep}{\onelineskip}
 
 
-% ---- Typeset Title page -----------------------------------------------------
+% ---- Table of contents (ToC) -----------------------------------------------
+\setrmarg{3em}
+\setpnumwidth{1.5em}
+
+\maxtocdepth{subsection}  % put 3 levels into the ToC
+\addto{\captionsenglish}{\renewcommand{\contentsname}{Table of Contents}}
+\renewcommand{\cftdotsep}{0.5}
+\renewcommand*{\cftchapterfont}{\normalfont}
+\renewcommand*{\cftchapterpagefont}{\normalfont}
+\renewcommand*{\cftchapterleader}{\cftchapterfont\cftdotfill{\cftchapterdotsep}}
+\renewcommand*{\cftchapterdotsep}{\cftdotsep}
+\renewcommand*{\cftchaptername}{\chaptername}
+\renewcommand*{\cftchapterpresnum}{\ }
+\renewcommand*{\cftchapteraftersnum}{:}
+\renewcommand*{\cftappendixname}{\appendixname}
+
+\setlength{\cftbeforechapterskip}{6pt plus 1pt minus 1pt}
+\setlength{\cftbeforesectionskip}{6pt plus 1pt minus 1pt}
+\setlength{\cftbeforesubsectionskip}{6pt plus 1pt minus 1pt}
+
+
+% ---- List of figures (LoF), and list of tables (LoT) -----------------------
+\addtodef{\listoffigures}{\clearpage}{}
+\renewcommand*{\cftfigurename}{\figurename}
+\renewcommand*{\cftfigurepresnum}{\ }
+\renewcommand*{\cftfigureaftersnum}{:}
+\setlength{\cftbeforefigureskip}{6pt plus 1pt minus 1pt}
+
+\addtodef{\listoftables}{\clearpage}{}
+\renewcommand*{\cfttablename}{\tablename}
+\renewcommand*{\cfttablepresnum}{\ }
+\renewcommand*{\cfttableaftersnum}{:}
+\setlength{\cftbeforetableskip}{6pt plus 1pt minus 1pt}
+
+% No chapter space inserted in LoF and LoT
+\renewcommand{\insertchapterspace}{}
+
+
+% ---- Title page -----------------------------------------------------
 \newcommand{\settitle}[1]{\def\thesistitle{#1}}
 \newcommand{\setauthor}[1]{\def\thesisauthor{#1}}
 \newcommand{\setthesistype}[1]{\def\thesistype{#1}}
@@ -170,47 +200,6 @@
     \vfill
     \clearpage%
 }}
-
-
-% ---- Table of contents (ToC) -----------------------------------------------
-\setrmarg{3em}
-\setpnumwidth{1.5em}
-
-\maxtocdepth{subsection}  % put 3 levels into the ToC
-
-\renewcommand{\contentsname}{Table of Contents}
-\renewcommand{\cftdotsep}{0.5}
-\renewcommand*{\cftchapterfont}{\normalfont}
-\renewcommand*{\cftchapterpagefont}{\normalfont}
-\renewcommand*{\cftchapterleader}{\cftchapterfont\cftdotfill{\cftchapterdotsep}}
-\renewcommand*{\cftchapterdotsep}{\cftdotsep}
-\renewcommand*{\cftchaptername}{\chaptername}
-\renewcommand*{\cftchapterpresnum}{\ }
-\renewcommand*{\cftchapteraftersnum}{:}
-\renewcommand*{\cftappendixname}{\appendixname}
-
-\setlength{\cftbeforechapterskip}{6pt plus 1pt minus 1pt}
-\setlength{\cftbeforesectionskip}{6pt plus 1pt minus 1pt}
-\setlength{\cftbeforesubsectionskip}{6pt plus 1pt minus 1pt}
-
-
-% ---- List of figures (LoF), and list of tables (LoT) -----------------------
-\addtodef{\listoffigures}{\clearpage}{}
-\renewcommand*{\cftfigurename}{\figurename}
-\renewcommand*{\cftfigurepresnum}{\ }
-\renewcommand*{\cftfigureaftersnum}{:}
-\setlength{\cftbeforefigureskip}{6pt plus 1pt minus 1pt}
-
-\addtodef{\listoftables}{\clearpage}{}
-\renewcommand*{\cfttablename}{\tablename}
-\renewcommand*{\cfttablepresnum}{\ }
-\renewcommand*{\cfttableaftersnum}{:}
-\setlength{\cftbeforetableskip}{6pt plus 1pt minus 1pt}
-
-% No chapter space inserted in LoF and LoT
-\renewcommand{\insertchapterspace}{}
-
-\newcommand{\thesisacknowledgements}{\pretoctitle{Acknowledgments}}
 
 
 % ---- Acknowledgements page -------------------------------------------------
