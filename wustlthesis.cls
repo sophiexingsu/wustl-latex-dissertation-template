@@ -24,7 +24,7 @@
 %   * Rewrite of the original wuthesis.cls file
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
-\ProvidesClass{newwuthesis}[2021/09/12 WUSTL thesis/dissertation template]
+\ProvidesClass{wustlthesis}[2021/09/12 WUSTL thesis/dissertation template]
 
 
 % ---- Define Page Layout -----------------------------------------------------

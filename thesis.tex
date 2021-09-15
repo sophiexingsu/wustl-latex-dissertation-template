@@ -1,200 +1,117 @@
-% !TEX program = lualatex
-% !TEX format = pdf
-% !TEX encoding = UTF-8
+\documentclass{wustlthesis}
 
-\documentclass[phdthesis,12pt,final]{wuthesis}
+\setmainfont{Times New Roman}               % Use Times New Roman
+\setmathfont{STIXTwoMath}[math-style=ISO]   % Use math font that matches Times New Roman
 
-\usepackage{ifluatex}
-\ifluatex
-  \usepackage{fontspec} % international characters
+% Re-calculate the lengths of a text line using the current font
+\setlxvchars[\normalfont\normalsize]
+\setxlvchars[\normalfont\normalsize]
+\checkandfixthelayout[classic]
 
-  \usepackage{polyglossia}
-  \setmainlanguage[variant=american]{english}
-\else % use for pdflatex
-  \usepackage[utf8]{inputenc}
-  \usepackage[T1]{fontenc}
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{%
+    colorlinks=true,
+    linkcolor=black, urlcolor=blue%
+}
 
-  \usepackage[USenglish]{babel}
-\fi
+% Tables
+\usepackage{threeparttable}
+\usepackage{makecell}  % allow multiple lines in a table cell
 
-\usepackage{microtype} % typographical perfection
-\usepackage{csquotes}
-\usepackage[vskip=0pt,begintext=\textooquote,endtext=\textcoquote]{quoting}
-\SetBlockEnvironment{quoting}
+% Graphics
+\usepackage{graphicx}
 
+% Bibliography
 \usepackage[
-  backend=biber,
-  isbn=false,
-  url=false,
-  sortcites,
-  maxbibnames=8
+    backend=biber,
+    style=nature,
+    date=year,
+    isbn=false, url=false, doi=true,
+    minnames=1, maxnames=9,
+    backref=true
 ]{biblatex}
+
+% rename bibliography section name
+\DefineBibliographyStrings{english}{bibliography = {References}}
+
+% define the bibliography path
 \addbibresource{references.bib}
 
-\usepackage{amsmath}
-\usepackage{amsfonts}
 
-\usepackage[section]{placeins} % stop floats at sections
-\usepackage[inline, shortlabels]{enumitem}
-\usepackage{threeparttable}
-\usepackage{booktabs}
-\usepackage{array}
-\usepackage{siunitx}
-\usepackage{makecell}
-\newcommand{\stretchtable}[1][1.4]{\renewcommand{\arraystretch}{#1}}
-\usepackage{mdframed}
+% Configure title page
+\settitle{A Mock Thesis on the Proper Formatting of Dissertations and Theses for\\ Arts \& Sciences Graduate Students}
+\setauthor{Paige Turner}
+\setthesistype{Dissertation}
+\setthesisdegree{Doctor of Philosophy}
+\setthesisdegreeabbrv{Ph.D.}
+% Degree officially earn date must be in December, May, or August
+\setdegreeearnmonth{May}
+\setdegreeearnyear{2017}
+\setthesisadvisor{%
+    Katherine Davidsen, Chair\\
+    Michael Randolf, Co-Chair}
+\setthesiscommittee{%
+    Katherine Davidsen, Chair\\
+    Michael Randolf, Co-Chair\\
+    Richard Lewis\\
+    Hillary O’Connell\\
+    Jack Taylor}
+\setthesisschool{Division of Biology and Biomedical Sciences}
+\setthesisdepartment{Neurosciences}
 
-% use links in document. load last.
-\usepackage[hidelinks,linktoc=all]{hyperref}
-\usepackage[noabbrev]{cleveref}
-\newcommand{\crefrangeconjunction}{--}
-\usepackage{caption}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% These commands customize the `wuthesis' package for me
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optional packages that are not required in the real thesis
+% Show page layout
+\usepackage{layout}
 
-%% Enter your official name
-\renewcommand{\thesisauthor}{Paige Turner}
-\renewcommand{\thesisauthorlastname}{Turner}
-
-%% Enter your previous degrees
-%% If you have no previous degrees remember to remove the comma too.
-%\renewcommand{\thesisauthorpreviousdegrees}{, J.D.}
-
-%% Enter department name
-\renewcommand{\thesisdepartment}{Department of Computer Science and Engineering}
-\renewcommand{\thesisfield}{Computer Science}
-
-%% Enter date of graduation
-\renewcommand{\thesismonth}{May}
-\renewcommand{\thesisyear}{2016}
-
-%% Enter title of thesis
-\renewcommand{\thesistitle}{A Mock Thesis on the Proper Formatting of Dissertations and Theses for \\ Arts \& Sciences Graduate Students}
-
-%% Enter the copyright holder ( DEFAULT is \thesisauthor )
-%\renewcommand{\thesiscopyrightholder}{\thesisauthor}
-
-%% Enter supervisor name
-\renewcommand{\thesissupervisor}{Professor Katherine Davidsen, Chair\\
-Professor Michael Randolf, Co-Chair}
-%%
-% list in alphabetical order
-%%
-\renewcommand{\thesiscommittee}{Katherine Davidsen, Chair\\
-Michael Randolf, Co-Chair \\
-Richard Lewis \\
-Hillary O'Connell \\
-Jack Taylor}
-
-\renewcommand{\thesisdedication}{Dedicated to my parents.}
-
-\hypersetup{
-  pdftitle={\thesistitle},
-  pdfauthor={\thesisauthor},
-  pdfpagemode=UseOutlines,
-  bookmarksnumbered=true,
-  bookmarksopen=true,
-  bookmarksopenlevel=1
-}
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 
 \begin{document}
 
 \frontmatter
+\thetitlepage                       % Title page
+\thesiscopyright{%                  % Thesis copyright page
+    \textcopyright~\degreeearnyear, Paige Turner}
 
-% NOTE: do not put any text in the thesistitlepage, thesiscopyrightpage,
-% or thesisdedicationpage sections.  If you want to use these pages, then you
-% should remove the notes below (e.g., by uncommenting the \iffalse
-% and \fi lines) and change the appropriate fields in thesis-main.tex.
-% This will ensure that the copyright and dedication lines are positioned
-% and formatted correctly.  Additionally, remove the
-% thesisacknowledgmentpostscript and listoftablespostscript sections, since
-% these are used to add explanatory notes which shouldn't be there in normal
-% theses.
+\SingleSpacing*
+\setSingleSpace{1.15}
+\tableofcontents*                   % Table of contents (ToC)
+\listoffigures                      % List of figures (LoF)
+\listoftables                       % List of tables (LoT)
 
-\begin{thesistitlepage}
-\end{thesistitlepage}
+\DoubleSpacing
+\include{thesis-acknowledgments}    % Acknowledgements
+\thesisdedication{%                 % Dedication page
+    Dedicated to my parents.}
 
-\begin{thesiscopyrightpage}
-\end{thesiscopyrightpage}
-
-\begin{singlespace}
-\setcounter{page}{2}
-\renewcommand*\contentsname{Table of Contents}
-\tableofcontents
-
-% If one or more figures are used in the document, there must be a list of all figures and it must
-% be included in the table of contents. The list should be spaced at 1.15. Begin each listing on a
-% new line.
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
-
-% If one or more tables are used in the document, there must be a list of all tables and it must be
-% included in the table of contents. The list should be spaced at 1.15. Begin each listing on a new
-% line.
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
-\end{singlespace}
-
-\begin{thesisacknowledgments}
-An acknowledgments page must be included in your final dissertation or thesis.
-If you wish to include a special dedication you can either use it to close the acknowledgments page or place it on the page that immediately follows.
-The acknowledgments page should be listed in the table of contents.
-Place it after the final list used in the document, and before any dedication, abstract, or epigraph that is included.
-
-It is appropriate to acknowledge sources of academic and financial support; some fellowships and grants require acknowledgment.
-
-We offer special thanks to the Washington University School of Engineering for allowing us to use their dissertation and thesis template as a starting point for the development of this document.
-\end{thesisacknowledgments}
-
-% Note: If you include a special dedication as shown here be sure to keep it brief and center it on
-% the page both horizontally and vertically. Alternatively, you may remove this page altogether,
-% and a special dedication can be placed as the final paragraph of your acknowledgments page. Do
-% not include the dedication page in your table of contents.
-\begin{thesisdedicationpage}\label{dedication}
-\end{thesisdedicationpage}
-
-\cleardoublepage
-\phantomsection
-\begin{thesisabstract}
-After removing these comments, begin typing the body of your abstract here, double-spaced.
-Your font should be 12-point (which is the text of this sample paragraph).
-No part of the abstract should be bolded.
-If this is for your master's degree, be sure to change all occurrences of the word ``dissertation'' to display as ``thesis,'' and change ``Doctor of Philosophy'' or ``Doctor of Liberal Arts'' to ``Master of Arts,'' ``Master of Liberal Arts,'' or ``Master of Fine Arts,'' whichever applies.
-In the abstract heading above, make sure you use the year your degree is to be officially earned.
-Be sure to use your full name as it is recorded in WebSTAC, your dissertation or thesis advisor's full name(s) wherever appropriate, and the correct title of your degree whenever referencing it.
-The title of your degree will not always be the same as the title of your department or program, so please check with your departmental administrative assistant and adviser(s) to be sure you are using the correct degree title.
-Please note that an abstract is required for all dissertation submissions in ProQuest.
-An abstract is optional for master's thesis submissions.
-\end{thesisabstract}
+\begin{abstract}
+After removing these comments, begin typing the body of your abstract here, double-spaced.  Your
+font should be 12-point (which is the text of this sample paragraph). No part of the abstract
+should be bolded. If this is for your master's degree, be sure to change all occurrences of the word
+``dissertation'' to display as ``thesis,'' and change ``Doctor of Philosophy'' or ``Doctor of
+Liberal Arts'' to ``Master of Arts,'' ``Master of Liberal Arts,'' or ``Master of Fine Arts,''
+whichever applies.  In the abstract heading above, make sure you use the year your degree is to be
+officially earned. Be sure to use your full name as it is recorded in WebSTAC, your dissertation or
+thesis advisor's full name(s) wherever appropriate, and the correct title of your degree whenever
+referencing it.  The title of your degree will not always be the same as the title of your
+department or program, so please check with your departmental administrative assistant and
+advisor(s) to be sure you are using the correct degree title.  Please note that an abstract is
+required for all dissertation submissions in ProQuest. An abstract is optional for master's thesis
+submissions.
+\end{abstract}
 
 \mainmatter
+\pagestyle{main}
 \include{thesis-chapter1}
 \include{thesis-chapter2}
 
-% references
-\begin{spacing}{1.0}
-% Create References header for TOC
-\defbibheading{references}[References]{%
-\chapter*{#1}%
-\addcontentsline{toc}{chapter}{#1}}
-
-% Additional line break pass in references
-\appto{\bibsetup}{\emergencystretch=1em}
-
-\printbibliography[heading=references]
-\end{spacing}
-\clearpage
+\begin{SingleSpace}
+\printbibliography
+\nocite{*}
+\end{SingleSpace}
 
 \appendix
 \include{thesis-appendix}
+\include{thesis-chapter-latex}
 
 \end{document}
