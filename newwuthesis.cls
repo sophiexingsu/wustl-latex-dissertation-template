@@ -40,7 +40,7 @@
 % Header and footer location
 % Note though the style specifies that nothing can be inside the page margins, the style guide
 % doc file actually places the page numbers in the margin. The settings below mimics the doc.
-\setheadfoot{18pt}{18pt}
+\setheadfoot{18pt}{16pt}
 \setheaderspaces{0.5in}{*}{*}
 
 % Margin note location
