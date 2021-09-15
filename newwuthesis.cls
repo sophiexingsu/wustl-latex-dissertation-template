@@ -207,6 +207,8 @@
 \renewcommand*{\cfttableaftersnum}{:}
 \setlength{\cftbeforetableskip}{6pt plus 1pt minus 1pt}
 
+% No chapter space inserted in LoF and LoT
+\renewcommand{\insertchapterspace}{}
 
 \newcommand{\thesisacknowledgements}{\pretoctitle{Acknowledgments}}
 
