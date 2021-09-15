@@ -15,8 +15,11 @@
 \usepackage{layout}
 
 % Hyperlinks
-\RequirePackage[hidelinks]{hyperref}
-\urlstyle{same}
+\RequirePackage[pagebackref]{hyperref}
+\hypersetup{%
+    colorlinks=true,
+    linkcolor=black, urlcolor=blue%
+}
 
 % Tables
 \usepackage{threeparttable}
