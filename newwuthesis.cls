@@ -216,23 +216,24 @@
 
 
 % ---- Abstract page ---------------------------------------------------------
-\newenvironment{thesisabstract}
-    {\phantomsection
+\BeforeBeginEnvironment{abstract}{%
     \vspace*{-1.5in}\phantomsection\vspace*{1.5in}
-    \addcontentsline{toc}{chapter}{Abstract}
-    \begin{abstract}}
-    {\end{abstract}}
+    \addcontentsline{toc}{chapter}{Abstract}}
+% Update the abstract title.
+% Note the \addto{\captionLANG}{...} is needed to override babel.
+% Ref: https://tex.stackexchange.com/a/24778
+\addto{\captionsenglish}{%
+    \renewcommand{\abstractname}{%
+        ABSTRACT OF THE \MakeUppercase{\thesistype}\\
+        \thesistitle \\
+        by \\
+        \thesisauthor \\
+        \thesisschool \\
+        \thesisdepartment \\
+        Washington University in St.~Louis, \degreeearnyear \\
+        \thesisadvisor%
+    }}
 \renewcommand{\absnamepos}{center}
-\renewcommand{\abstractname}{%
-    ABSTRACT OF THE \MakeUppercase{\thesistype}\\
-    \thesistitle \\
-    by \\
-    \thesisauthor \\
-    \thesisschool \\
-    \thesisdepartment \\
-    Washington University in St.~Louis, \degreeearnyear \\
-    \thesisadvisor%
-}
 \renewcommand{\abstractnamefont}{%
     \vspace{-\beforechapskip}
     \vspace{-\baselineskip}
