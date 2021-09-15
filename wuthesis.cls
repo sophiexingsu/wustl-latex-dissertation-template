@@ -259,7 +259,7 @@ Robert Edward Thomas}
       \vspace{\stretch{.75}}
 
       \thesismonth\ \thesisyear \\
-      St. Louis, Missouri
+      St.\@ Louis, Missouri
 
     \end{singlespace}
     \end{center}
@@ -300,7 +300,7 @@ Robert Edward Thomas}
     \thesisdegree\ in \thesisfield \\
     %Washington University in St. Louis, \thesismonth\ \thesisyear \\
     %Research Advisor: \thesissupervisor
-    Washington University in St.~Louis, \thesisyear \\
+    Washington University in St.\@ Louis, \thesisyear \\
     \thesissupervisor
   \end{doublespace}
   \end{center}
