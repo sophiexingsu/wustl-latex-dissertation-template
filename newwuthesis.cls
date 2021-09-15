@@ -86,9 +86,10 @@
         \centering\chapnamefont\chaptername\ }
     \renewcommand*{\printchapternum}{%
         \thechapter:\ }%
+
+    \renewcommand*{\printchapternonum}{\centering}
 }
 \chapterstyle{thesis}
-
 
 
 % ---- Typeset Title page -----------------------------------------------------
@@ -152,7 +153,7 @@
 }}
 
 
-% ---- Typeset table of contents (ToC) ---------------------------------------
+% ---- Table of contents (ToC) ---------------------------------------
 \setrmarg{3em}
 \setpnumwidth{1.5em}
 
@@ -173,7 +174,7 @@
 \setlength{\cftbeforesubsectionskip}{6pt plus 1pt minus 1pt}
 
 
-% ---- Typeset list of figures (LoF), and list of tables (LoT) ---------------
+% ---- List of figures (LoF), and list of tables (LoT) ---------------
 \addtodef{\listoffigures}{\clearpage}{}
 \renewcommand*{\cftfigurename}{\figurename}
 \renewcommand*{\cftfigurepresnum}{\ }
