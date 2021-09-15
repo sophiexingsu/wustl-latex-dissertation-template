@@ -12,7 +12,7 @@
 \usepackage{hyperref}
 \hypersetup{%
     colorlinks=true,
-    linkcolor=black, urlcolor=blue%
+    linkcolor=black, urlcolor=blue, citecolor=black%
 }
 
 % Tables
@@ -31,9 +31,12 @@
     minnames=1, maxnames=9,
     backref=true
 ]{biblatex}
-
 % rename bibliography section name
-\DefineBibliographyStrings{english}{bibliography = {References}}
+\DefineBibliographyStrings{english}{
+    bibliography = {References},
+    backrefpage = {cited on p\adddot},
+    backrefpages = {cited on pp\adddot}}
+\urlstyle{same}
 
 % define the bibliography path
 \addbibresource{references.bib}
