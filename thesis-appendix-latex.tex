@@ -1,23 +1,20 @@
-\chapter{{\LaTeX} test}
+\chapter{{\LaTeX}\ Specific Usage}
 
-This \LaTeX template is configured to produce a PDF.
-Your figures should be PDF files like Figure~\ref{fig:pdf}.
-If you do not have a PDF version of your figure, \emph{latexmk} and \emph{emph} can convert the image to PDF for you as shown in Figure~\ref{fig:svg}.
+This template is heavily built on \href{https://www.ctan.org/pkg/memoir}{memoir} package. See memoir's documentation for detailed usage.
 
-\begin{figure}
+\section{Figures}
+Common file formats (PDF, PNG, and JPG) are supported. Vector figures should use PDF to ensure the resolution, such as \fref{fig:vector}.
+
+\begin{figure}[tbh]
   \centering
-  \includegraphics{figures/just-a-plot}
-  \caption[Figures must be PDF]{All figures must be PDFs.}
-  \label{fig:pdf}
+  \includegraphics[width=0.6\textwidth]{figures/just-a-plot}
+  \caption{Example vector figure in PDF.}
+  \label{fig:vector}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics{figures/just-a-graph}
-  \caption[SVG converted to PDF]{the \texttt{Makefile} and \texttt{latexmkrc} files include a rule to convert SVG images to PDF images.
-	\emph{latexmk} will convert EPS files for you too.}
-  \label{fig:svg}
-\end{figure}
+
+\section{Equations}
+See Equation~\ref{eq:maxwell}.
 
 \begin{equation}
     \label{eq:maxwell}
@@ -29,12 +26,6 @@ If you do not have a PDF version of your figure, \emph{latexmk} and \emph{emph} 
     \end{aligned}
 \end{equation}
 
-\[
-    \oint_C {E \cdot d\ell = - \frac{d}{{dt}}} \int_S {B_n dA}
-\]
-
-L45 = \the\xlvchars\par
-L65 = \the\lxvchars
-
 \clearpage
+\section{Page layout}
 \layout
