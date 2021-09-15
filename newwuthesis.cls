@@ -35,13 +35,13 @@
 
 % Page margin
 \setlrmarginsandblock{1in}{1in}{*}
-\setulmarginsandblock{1in}{*}{1}
+\setulmarginsandblock{1in}{88pt}{*}  % 1in + 16pt = 88pt
 
 % Header and footer location
 % Note though the style specifies that nothing can be inside the page margins, the style guide
 % doc file actually places the page numbers in the margin. The settings below mimics the doc.
 \setheadfoot{18pt}{16pt}
-\setheaderspaces{0.5in}{*}{*}
+\setheaderspaces{*}{6pt}{*}
 
 % Margin note location
 % Note that the style guide prohibits margin notes.
@@ -57,6 +57,9 @@
 \RequirePackage{fontspec}
 \RequirePackage{unicode-math}
 
+% Underline improvement
+\RequirePackage{ulem}
+
 
 % ---- Main page style --------------------------------------------------------
 \makepagestyle{main}
@@ -65,6 +68,24 @@
 
 % Default page style
 \pagestyle{plain}
+
+
+% ---- Section numbering and style -----------------------------------------------------
+% Section numbering down to subsection
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsection}
+
+% Chapter style
+\chapterstyle{tandh}
+\renewcommand*{\printchaptername}{%
+    \centering\chapnamefont\chaptername\ }
+\renewcommand*{\printchapternum}{%
+    \thechapter:\ }
+
+\renewcommand*{\chapnamefont}{\normalfont\huge\bfseries\rmfamily}
+\renewcommand*{\chapnumfont}{\normalfont\huge\bfseries\rmfamily}
+\renewcommand*{\chaptitlefont}{\normalfont\huge\bfseries\rmfamily}
+
 
 % ---- Typeset Title page -----------------------------------------------------
 \newcommand{\settitle}[1]{\def\thesistitle{#1}}
@@ -114,7 +135,7 @@
     \clearpage%
 }
 
-% ---- Thesis copyright page ------------------------------------------------
+% ---- Thesis copyright page -------------------------------------------------
 \newcommand{\thesiscopyright}[1]{{%
     \clearpage
     \thispagestyle{empty}
@@ -127,7 +148,7 @@
 }}
 
 
-% ---- Typeset table of contents ------------------------------------------------
+% ---- Typeset table of contents ---------------------------------------------
 \setrmarg{2em}
 \setpnumwidth{0.5em}
 
@@ -139,8 +160,10 @@
 \renewcommand*{\cftchapterdotsep}{\cftdotsep}
 \renewcommand\cftchaptername{\chaptername~}
 
+\maxtocdepth{subsection}  % put 3 levels into the ToC
 
-% ---- Typeset dedication page ------------------------------------------------
+
+% ---- Typeset dedication page -----------------------------------------------
 \newcommand{\thesisdedication}[1]{{%
     \clearpage
     \mbox{}
