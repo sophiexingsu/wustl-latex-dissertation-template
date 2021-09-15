@@ -212,6 +212,7 @@
 % ---- Dedication page -------------------------------------------------------
 \newcommand{\thesisdedication}[1]{{%
     \clearpage
+    \label{thesisdedication}
     \mbox{}
     \vfill
     \centering #1
