@@ -110,7 +110,7 @@
     \begin{titlingpage}
     \thispagestyle{empty}
     \SingleSpacing
-    \setSingleSpace{1.15}
+    \setSingleSpace{1.2}
     \centering
     WASHINGTON UNIVERSITY IN ST.~LOUIS \\[\onelineskip]
     \thesisschool \\
@@ -139,6 +139,7 @@
     \clearpage%
 }
 
+
 % ---- Thesis copyright page -------------------------------------------------
 \newcommand{\thesiscopyright}[1]{{%
     \clearpage
@@ -152,9 +153,11 @@
 }}
 
 
-% ---- Typeset table of contents ---------------------------------------------
-\setrmarg{2.5em}
+% ---- Typeset table of contents (ToC) ---------------------------------------
+\setrmarg{3em}
 \setpnumwidth{1.5em}
+
+\maxtocdepth{subsection}  % put 3 levels into the ToC
 
 \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\cftdotsep}{0.5}
@@ -166,8 +169,23 @@
 \renewcommand*{\cftchapterpresnum}{\ }
 \renewcommand*{\cftchapteraftersnum}{:}
 
+\setlength{\cftbeforechapterskip}{6pt plus 1pt minus 1pt}
+\setlength{\cftbeforesectionskip}{6pt plus 1pt minus 1pt}
+\setlength{\cftbeforesubsectionskip}{6pt plus 1pt minus 1pt}
 
-\maxtocdepth{subsection}  % put 3 levels into the ToC
+
+% ---- Typeset list of figures (LoF), and list of tables (LoT) ---------------
+\addtodef{\listoffigures}{\clearpage}{}
+\renewcommand*{\cftfigurename}{\figurename}
+\renewcommand*{\cftfigurepresnum}{\ }
+\renewcommand*{\cftfigureaftersnum}{:}
+\setlength{\cftbeforefigureskip}{6pt plus 1pt minus 1pt}
+
+\addtodef{\listoftables}{\clearpage}{}
+\renewcommand*{\cfttablename}{\tablename}
+\renewcommand*{\cfttablepresnum}{\ }
+\renewcommand*{\cfttableaftersnum}{:}
+\setlength{\cftbeforetableskip}{6pt plus 1pt minus 1pt}
 
 
 % ---- Typeset dedication page -----------------------------------------------

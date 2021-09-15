@@ -50,15 +50,21 @@
 \begin{document}
 
 \frontmatter
-% Title page
-\thetitlepage
+\thetitlepage               % Title page
+
 % Thesis copyright page
 \thesiscopyright{\textcopyright~2017, Paige Turner}
-% Table of contents
-\tableofcontents*
+
+\SingleSpacing*
+\setSingleSpace{1.15}
+\tableofcontents*       % Table of contents (ToC)
+\listoffigures          % List of figures (LoF)
+\listoftables           % List of tables (LoT)
+
 % Dedication page
 \thesisdedication{Dedicated to my parents.}
 
+\DoubleSpacing
 \mainmatter
 \pagestyle{main}
 \include{thesis-chapter1}
