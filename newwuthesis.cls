@@ -76,15 +76,19 @@
 \maxsecnumdepth{subsection}
 
 % Chapter style
-\chapterstyle{tandh}
-\renewcommand*{\printchaptername}{%
-    \centering\chapnamefont\chaptername\ }
-\renewcommand*{\printchapternum}{%
-    \thechapter:\ }
+\makechapterstyle{thesis}{%
+    \chapterstyle{tandh}
+    \renewcommand*{\chapnamefont}{\normalfont\huge\bfseries\rmfamily}
+    \renewcommand*{\chapnumfont}{\normalfont\huge\bfseries\rmfamily}
+    \renewcommand*{\chaptitlefont}{\normalfont\huge\bfseries\rmfamily}
 
-\renewcommand*{\chapnamefont}{\normalfont\huge\bfseries\rmfamily}
-\renewcommand*{\chapnumfont}{\normalfont\huge\bfseries\rmfamily}
-\renewcommand*{\chaptitlefont}{\normalfont\huge\bfseries\rmfamily}
+    \renewcommand*{\printchaptername}{%
+        \centering\chapnamefont\chaptername\ }
+    \renewcommand*{\printchapternum}{%
+        \thechapter:\ }%
+}
+\chapterstyle{thesis}
+
 
 
 % ---- Typeset Title page -----------------------------------------------------
