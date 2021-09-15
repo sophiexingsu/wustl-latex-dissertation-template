@@ -38,6 +38,10 @@ Be certain to use your own full name (as recorded in \href{https://acadinfo.wust
   \centering
   \DoubleSpacing
 
+  % Because Times New Roman doesn't have checkmark symbol,
+  % Use the checkmark symbol from pifont
+  \newcommand{\mycheckmark}{\ding{52}}
+
   \footnotesize
   \begin{threeparttable}[b]
   \begin{tabular}{@{}ccccc@{}}
@@ -49,22 +53,22 @@ Be certain to use your own full name (as recorded in \href{https://acadinfo.wust
     \textbf{Page Numbering} \\
   \midrule
 
-  Front Matter & Title page & \checkmark & & counted, not numbered \\
-  & Copyright page & & \checkmark & neither counted, nor numbered \\
-  & Table of Contents & \checkmark & & begins on page number \underline{ii} \\
-  & List of Figures & & \checkmark & [lowercase Roman numerals continue] \\
-  & List of Illustrations & & \checkmark & [lowercase Roman numerals continue] \\
-  & List of Tables & & \checkmark & [lowercase Roman numerals continue] \\
-  & List of Abbreviations & & \checkmark & [lowercase Roman numerals continue] \\
-  & Acknowledgments & \checkmark & & [lowercase Roman numerals continue] \\
-  & Dedication\tnote{*} & & \checkmark & [lowercase Roman numerals continue] \\
-  & Abstract page & & \checkmark & [lowercase Roman numerals continue] \\
-  & Preface & & \checkmark & [lowercase Roman numerals continue] \\
-  Body & Epigraph\tnote{*} & & \checkmark & begins on a page numbered \underline{1} \\
-  & Chapters & \checkmark & & [Arabic numerals begin or continue] \\
-  Back Matter & References\tnote{**} & \checkmark & & [Arabic numerals continue] \\
-  & Appendices & & \checkmark & [Arabic numerals continue] \\
-  & Curriculum Vitae\tnote{***} & & \checkmark & [Arabic numerals continue] \\
+  Front Matter & Title page & \mycheckmark & & counted, not numbered \\
+  & Copyright page & & \mycheckmark & neither counted, nor numbered \\
+  & Table of Contents & \mycheckmark & & begins on page number \underline{ii} \\
+  & List of Figures & & \mycheckmark & [lowercase Roman numerals continue] \\
+  & List of Illustrations & & \mycheckmark & [lowercase Roman numerals continue] \\
+  & List of Tables & & \mycheckmark & [lowercase Roman numerals continue] \\
+  & List of Abbreviations & & \mycheckmark & [lowercase Roman numerals continue] \\
+  & Acknowledgments & \mycheckmark & & [lowercase Roman numerals continue] \\
+  & Dedication\tnote{*} & & \mycheckmark & [lowercase Roman numerals continue] \\
+  & Abstract page & & \mycheckmark & [lowercase Roman numerals continue] \\
+  & Preface & & \mycheckmark & [lowercase Roman numerals continue] \\
+  Body & Epigraph\tnote{*} & & \mycheckmark & begins on a page numbered \underline{1} \\
+  & Chapters & \mycheckmark & & [Arabic numerals begin or continue] \\
+  Back Matter & References\tnote{**} & \mycheckmark & & [Arabic numerals continue] \\
+  & Appendices & & \mycheckmark & [Arabic numerals continue] \\
+  & Curriculum Vitae\tnote{***} & & \mycheckmark & [Arabic numerals continue] \\
   \bottomrule
   \end{tabular}
 
