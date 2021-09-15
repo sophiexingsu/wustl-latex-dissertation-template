@@ -62,6 +62,7 @@
 % Quotation style
 \RequirePackage[autostyle,english=american]{csquotes}
 
+
 % ---- Main page style --------------------------------------------------------
 \makepagestyle{main}
    \makeevenfoot{main}{}{\thepage}{}
@@ -94,6 +95,10 @@
     \renewcommand*{\printchapternonum}{\centering}
 }
 \chapterstyle{thesis}
+
+
+% ---- Bibliography/References style ------------------------------------------
+\setlength{\bibitemsep}{\onelineskip}
 
 
 % ---- Typeset Title page -----------------------------------------------------

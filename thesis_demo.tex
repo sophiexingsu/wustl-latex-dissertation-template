@@ -11,11 +11,8 @@
 \setxlvchars[\normalfont\normalsize]
 \checkandfixthelayout[classic]
 
-% Show Layout
-\usepackage{layout}
-
 % Hyperlinks
-\RequirePackage[pagebackref]{hyperref}
+\usepackage{hyperref}
 \hypersetup{%
     colorlinks=true,
     linkcolor=black, urlcolor=blue%
@@ -27,6 +24,26 @@
 
 % Graphics
 \usepackage{graphicx}
+
+% Show page layout
+\usepackage{layout}
+
+% Bibliography
+\usepackage[
+    backend=biber,
+    style=nature,
+    date=year,
+    isbn=false, url=false, doi=true,
+    minnames=1, maxnames=9,
+    backref=true
+]{biblatex}
+% rename bibliography section name
+\DefineBibliographyStrings{english}{
+    bibliography = {References}
+}
+% define the bibliography path
+\addbibresource{references.bib}
+
 
 % Configure title page
 \settitle{A Mock Thesis on the Proper Formatting of Dissertations and Theses for\\ Arts \& Sciences Graduate Students}
@@ -90,4 +107,8 @@ submissions.
 \include{thesis-chapter2}
 \include{thesis-chapter-latex}
 
+\begin{SingleSpace}
+\printbibliography
+\nocite{*}
+\end{SingleSpace}
 \end{document}
