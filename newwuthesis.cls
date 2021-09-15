@@ -188,7 +188,18 @@
 \setlength{\cftbeforetableskip}{6pt plus 1pt minus 1pt}
 
 
-% ---- Typeset dedication page -----------------------------------------------
+\newcommand{\thesisacknowledgements}{\pretoctitle{Acknowledgments}}
+
+
+% ---- Acknowledgements page -----------------------------------------------
+\newcommand{\thesisacknowledgments}{%
+    \chapter*{Acknowledgments}
+    \vspace*{-1.5in}\phantomsection\vspace*{1.5in}
+    \addcontentsline{toc}{chapter}{Acknowledgements}%
+}
+
+
+% ---- Dedication page -----------------------------------------------
 \newcommand{\thesisdedication}[1]{{%
     \clearpage
     \mbox{}
