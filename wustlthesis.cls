@@ -145,7 +145,9 @@
 \newcommand{\setthesisdepartment}[1]{\def\thesisdepartment{#1}}
 
 \newcommand{\thetitlepage}{%
-    \clearpage
+    % Define a different page numbering for title page
+    % to avoid this warning (pdf backend): ignoring duplicate destination with the name 'page.i'
+    \pagenumbering{Alph}
     \begin{titlingpage}
     \thispagestyle{empty}
     \SingleSpacing
