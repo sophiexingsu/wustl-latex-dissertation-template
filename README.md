@@ -27,19 +27,17 @@ You will need a TeX Live installation (2020 and later) with LuaLaTeX for this te
         lualatex-math stix2-otf \
         threeparttable makecell
 
-For your bibliography, you will need Biber installed. Please note that this template uses Biblatex (not BibTeX). Biblatex is considered a replacement for BibTeX and supports special characters and URLs in citations.
+The bibliography is managed by Biber and BibLaTeX (not BibTex). Biblatex is considered a replacement for BibTeX and supports special characters (Unicode) and URLs in citations.
 
-You will also need Latexmk. Latexmk compiles LaTeX documents the correct number of times. Many makefiles for LaTeX documents often compile twice. Sometimes this is unnecessary, other times it is not enough. Latexmk will correctly determine the number of compilations necessary to produce a correct document.
-
-When including figures, please use PDF files whenever possible.
+LaTeX document compilation is automated by Latexmk. Latexmk compiles LaTeX documents the correct number of times. Many makefiles for LaTeX documents often compile twice. Sometimes this is unnecessary, other times it is not enough. Latexmk will correctly determine the number of compilations necessary to produce a correct document.
 
 ## Compiling the Document
 
 To compile, `latexmk -lualatex thesis.tex`
 
-To clean build files, but not the compiled document: `latexmk -C`
+To clean build files but not the compiled document: `latexmk -C`
 
-To clean all files, included the compiled document: `latexmk -CA`
+To clean all files incluing the compiled document: `latexmk -CA`
 
 ## Differences to the Word Template
 
@@ -63,7 +61,7 @@ If you would like to submit changes to this template, please fork this repositor
 LaTeX Project Public License version 1.3
 
 ## Change Log
-Version 2021-09-12:
+Version 2021-09-16:
 
 - Rewrite of the original `wuthesis.cls` file using memoir package
 
