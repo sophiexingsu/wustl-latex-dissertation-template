@@ -35,9 +35,9 @@ LaTeX document compilation is automated by Latexmk. Latexmk compiles LaTeX docum
 
 To compile, `latexmk -lualatex thesis.tex`
 
-To clean build files but not the compiled document: `latexmk -C`
+To clean build files but not the compiled document: `latexmk -c`
 
-To clean all files incluing the compiled document: `latexmk -CA`
+To clean all files incluing the compiled document: `latexmk -C`
 
 ## Differences to the Word Template
 
