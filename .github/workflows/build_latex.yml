@@ -1,0 +1,24 @@
+name: Build LaTeX PDF
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out Git Repository
+      uses: actions/checkout@v2
+
+    - name: Build LaTeX files
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: thesis.tex
+        latexmk_use_lualatex: true
+
+    - name: Check if PDF file is generated
+      run: |
+        file thesis.pdf | grep -q ' PDF '
+
+    - name: Upload PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: PDF
+        path: thesis.pdf
