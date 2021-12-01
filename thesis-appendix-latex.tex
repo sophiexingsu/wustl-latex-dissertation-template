@@ -12,6 +12,49 @@ Common file formats (PDF, PNG, and JPG) are supported. Vector figures should use
   \label{fig:vector}
 \end{figure}
 
+\section{Subfigures and subtables}
+Powered by \texttt{subcaption} package.
+See Figures \ref{fig:subfigdemo-cat} and \subcaptionref{fig:subfigdemo-elephant} for details.
+
+\begin{figure}
+    \begin{subfigure}[b]{.5\linewidth}
+        \centering
+        \textbf{A}\\ \Large Cat
+        \phantomsubcaption\label{fig:subfigdemo-cat}
+    \end{subfigure}%
+    \begin{subfigure}[b]{.5\linewidth}
+        \centering
+        \textbf{B}\\ \Large Elephant
+        \phantomsubcaption\label{fig:subfigdemo-elephant}
+    \end{subfigure}
+    \caption{Two animals. \subref{fig:subfigdemo-cat} a huge cat,
+    and \subref{fig:subfigdemo-elephant} an elephant}
+    \label{fig:subfigdemo}
+\end{figure}
+
+\begin{table}
+    \centering
+    \caption{Another table \subref{tab:1a} and \subref{tab:1b}}
+    \label{tab:legend}
+
+    \begin{subtable}{0.5\linewidth}
+        \centering
+        \subcaption{First}\label{tab:1a}
+        \begin{tabular}{lc} \toprule
+        A legendary table & 5 \\
+        with two lines    & 6 \\ \bottomrule
+        \end{tabular}
+    \end{subtable}%
+    \begin{subtable}{0.5\linewidth}
+        \centering
+        \subcaption{Second}\label{tab:1b}
+        \begin{tabular}{lc} \toprule
+        A legendary table & 5 \\
+        with two lines    & 6 \\ \bottomrule
+        \end{tabular}
+    \end{subtable}
+\end{table}
+
 
 \section{Citations}
 This paper demonstrated CRISPR can cut DNA at specific nucleotide sequences \cite{Jinek2012}.
