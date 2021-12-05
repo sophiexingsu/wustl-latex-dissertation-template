@@ -8,11 +8,21 @@
 \setxlvchars[\normalfont\normalsize]
 \checkandfixthelayout[classic]
 
+% Enable refinements of typographics
+\usepackage[
+    activate=true,
+    disable=false,  % enable microtype even in the draft mode
+    babel=true,     % enable language-specific kerning.
+]{microtype}
+\DeclareMicrotypeAlias{Times New Roman}{ptm}
+
 % Hyperlinks
 \usepackage{hyperref}
 \hypersetup{%
     colorlinks=true,
-    linkcolor=black, urlcolor=blue, citecolor=black%
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black,
 }
 % default URL style
 \urlstyle{same}
@@ -78,6 +88,13 @@
     Jack Taylor}
 \setthesisschool{Division of Biology and Biomedical Sciences}
 \setthesisdepartment{Neurosciences}
+
+
+% Configure PDF metadata
+\hypersetup{
+    pdftitle={\thesistitle},
+    pdfauthor={\thesisauthor},
+}
 
 
 % Optional packages that are not required in the real thesis
