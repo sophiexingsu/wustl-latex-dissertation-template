@@ -69,6 +69,7 @@
 \addbibresource{references.bib}
 
 
+
 % Configure title page
 \settitle{A Mock Thesis on the Proper Formatting of Dissertations and Theses for\\ Arts \& Sciences Graduate Students}
 \setauthor{Paige Turner}
@@ -92,7 +93,10 @@
 
 % Configure PDF metadata
 \hypersetup{
-    pdftitle={\thesistitle},
+    pdftitle={%
+        A Mock Thesis on the Proper Formatting of%
+        Dissertations and Theses for Arts \& Sciences Graduate Students%
+    },
     pdfauthor={\thesisauthor},
 }
 
@@ -100,6 +104,7 @@
 % Optional packages that are not required in the real thesis
 \usepackage{layout}     % Show page layout
 \usepackage{pifont}     % Extra symbols (optional if the main font has the symbols)
+\usepackage{emoji}      % Emojis
 
 
 \begin{document}
@@ -140,6 +145,7 @@ submissions.
 \pagestyle{main}
 \include{thesis-chapter-structure}
 \include{thesis-chapter-format}
+\include{thesis-chapter-latex}
 
 \begin{SingleSpace}
 \nocite{*}
@@ -148,6 +154,5 @@ submissions.
 
 \appendix
 \include{thesis-appendix-degree-program}
-\include{thesis-appendix-latex}
 
 \end{document}
