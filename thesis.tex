@@ -42,6 +42,21 @@
 \renewcommand\thesubtable{\Alph{subtable}}
 \captionsetup{subrefformat=parens}
 
+% Allowing subcaptions when all figure panels are combined
+% into one source image. Based on https://tex.stackexchange.com/a/255790
+\newcommand{\phantomlabel}[1]{%
+    \parbox{0pt}{\phantomsubcaption\label{#1}}%
+}
+
+% Add a note for figure caption spanning multiple pages
+\newcommand{\legendcontdnote}{%
+    \sourceatright[2em]{%
+        \footnotesize\itshape(legend continued on next page)%
+}}
+\newcommand{\legendcontdref}[1]{%
+    \emph{(\fref{#1} continued)}%
+}
+
 % Bibliography
 % use BibLaTeX + Biber and Nature citation style.
 % some extra configurations:
