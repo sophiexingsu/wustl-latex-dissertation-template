@@ -84,12 +84,18 @@ Similarly, multiple tables can be grouped together as one using the same method.
 
 \subsection{Figures with multiple panels merged into one source}
 Sometimes the figure has already merges multiple panels and it's hard to split the panels into individual sources.
-In this case, the panel numbers can be created using \cmd{\phantomlabel}.
-Both \fref{fig:subfigure-demo} and \ref{fig:cell-cycle-mitosis} create panel numbers using this approach.
+In this case, the panel numbers can be created using \cmd{\phantomlabel}\marg{labstr}.
+For example, both \fref{fig:subfigure-demo} and \ref{fig:cell-cycle-mitosis} create panel numbers using this approach.
 
 
 \subsection{Long figure legends spanning over the next page}
-Note the ``legend continued on next page'' mark is right aligned at the end of the line or a new line. Its style can modifyied by redefining \cmd{\legendcontdnote}.
+In some cases, the multi-panel figures may not have the vertical space to fit its legend, so the text overflow to the next page.
+The text overflow can be achieved by using \cmd{\legendcontdnote} at the end of the first half of the legend (following the figure) and \cmd{\legendcontdref}\marg{labstr} at the beginning of the second half of the legend (usually at the next page).
+\cmd{\legendcontdnote} inserts the ``\emph{(legend continued on next page)}'' mark right aligned at the end of the line or a new line.
+\cmd{\legendcontdref} inserts the ``\emph{(Figure X continued)}'' mark.
+Their style can modifyied by redefining the commands.
+
+For example, \fref{fig:cell-cycle-mitosis} spans over two pages. Note how the two adjacent figure environments are constructed (and the figure placement specifier).
 
 \begin{figure}[p]
     \centering
@@ -104,6 +110,11 @@ Note the ``legend continued on next page'' mark is right aligned at the end of t
         Stages are defined based on the completion of a set of activities.
         \href{https://commons.wikimedia.org/wiki/File:Animal_cell_cycle-en.svg}{Figures} are made by Kelvin Ma (Kelvinsong; Kelvin13), \href{https://creativecommons.org/licenses/by/3.0}{CC BY 3.0}, via Wikimedia Commons.
         Text is copied from the \href{https://en.wikipedia.org/wiki/Mitosis}{Mitosis} page of Wikipedia.
+        \subref{fig:mitosis-prophase}
+        During prophase, which occurs after G\textsubscript{2} interphase,
+        the cell prepares to divide by tightly condensing its chromosomes and initiating mitotic spindle formation.
+        \subref{fig:mitosis-prometaphase}
+        During prometaphase, the nuclear membrane breaks apart into numerous ``membrane vesicles'', and the chromosomes inside form protein structures called kinetochores.
         \legendcontdnote
     }
     \label{fig:cell-cycle-mitosis}
@@ -112,11 +123,6 @@ Note the ``legend continued on next page'' mark is right aligned at the end of t
     \centering
     \legend{%
         \legendcontdref{fig:cell-cycle-mitosis}
-        \subref{fig:mitosis-prophase}
-        During prophase, which occurs after G\textsubscript{2} interphase,
-        the cell prepares to divide by tightly condensing its chromosomes and initiating mitotic spindle formation.
-        \subref{fig:mitosis-prometaphase}
-        During prometaphase, the nuclear membrane breaks apart into numerous ``membrane vesicles'', and the chromosomes inside form protein structures called kinetochores.
         \subref{fig:mitosis-metaphase}
         During metaphase, the two centrosomes begin pulling the chromosomes towards opposite ends of the cell. The resulting tension causes the chromosomes to align along the metaphase plate or equatorial plane.
         \subref{fig:mitosis-anaphase}
