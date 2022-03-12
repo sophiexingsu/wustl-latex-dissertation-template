@@ -83,8 +83,10 @@ LaTeX Project Public License version 1.3
 - Rewrite of the original `wuthesis.cls` file using memoir package
 
 ## Origin of this template
-The template was rewritten by Liang-Bo Wang in 2021 based on the GitHub repo [harmsk/wustl-latex-dissertation-template]. Hence the document class was renamed from `wuthesis.cls` to `wustlthesis.cls` due to the likely incompatibility and style changes.
 
-While it's difficult to fully trace the origins of `wuthesis.cls`, based on the file comments, Kevin Ruland created the first version of the WashU Sever Institute thesis class `wuthesis.dtx` (later converted to `wuthesis.cls`) in 1995 based on UT Austin's Thesis Style File v2 by Dinesh Das in 1995. Revisions were made by Long Duan in 1996, by Greg Hackmann in 2005, 2007, and 2008, and finally by Michael Hall, David Lu in 2014.
+The template was rewritten by Liang-Bo Wang in 2021 based on Kyle J. Harms (`@harmsk`)'s GitHub repo [harmsk/wustl-latex-dissertation-template]. Hence the document class was renamed from `wuthesis.cls` to `wustlthesis.cls` due to the likely incompatibility and style changes. Given this is a full rewrite, I took the liberty of choosing a permissive license. Please let me know if there is any copyright infringement or license incomaptibility.
+
+While it's difficult to fully trace the origins of `wuthesis.cls`, based on the file comments, Kevin Ruland created the first version of the WashU Sever Institute thesis class `wuthesis.dtx` (later converted to `wuthesis.cls`) in 1995 based on UT Austin's Thesis Style File v2 by Dinesh Das in 1995. Revisions were made by Long Duan in 1996, by Greg Hackmann in 2005, 2007, and 2008, and finally by Michael Hall, David Lu in 2014. The git-tracable code was uploaded and modified by Jonathan Beard (`@jonathan-beard`) in [2015][jonathan-beard-fork]. It was then updated to match the school's 2016 official template by Kyle J. Harms (`@harmsk`), which became the upstream of this fork.
 
 [harmsk/wustl-latex-dissertation-template]: https://github.com/harmsk/wustl-latex-dissertation-template/tree/f5386bb93dee6e5c0c5b1faed317b687be0f199a
+[jonathan-beard-fork]:https://github.com/jonathan-beard/wustl_cse_thesis_template
