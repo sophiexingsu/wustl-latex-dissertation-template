@@ -1,7 +1,7 @@
 \chapter{{\LaTeX}\ Specific Usage}
 
-This template is heavily built on \href{https://www.ctan.org/pkg/memoir}{memoir} package.
-Check out memoir's documentation for its detailed usage and available customizations.
+This template is heavily built on \href{https://www.ctan.org/pkg/memoir}{\texttt{memoir}} package.
+Check out \texttt{memoir}'s documentation for its detailed usage and available customizations.
 
 The thesis style is defined in the document class at \file{wustlthesis.cls}.
 Since the school guideline is quite lenient, \texttt{wustlthesis} only contains minimal definition and has minimal required packages.
@@ -32,7 +32,7 @@ Use \cmd{\fref}\marg{labstr} to refer to the full figure and \cmd{\fref}\marg{su
 Use \cmd{\subcaptionref}\marg{sublabstr} to refer to just the panel number.
 For example, \fref{fig:subfigure-demo} has two panels, \subcaptionref{fig:subfigdemo-cat} and \subcaptionref{fig:subfigdemo-dog}.
 \fref{fig:subfigdemo-cat} refers to the cat panel.
-This example explicitly creates the panel numbers since it is often to have figures with the panel numbers embedded.
+This example explicitly creates the panel numbers since figures often have their panel numbers embedded.
 
 \begin{figure}[t]
     \begin{subfigure}[b]{.5\linewidth}
@@ -95,7 +95,7 @@ The text overflow can be achieved by using \cmd{\legendcontdnote} at the end of 
 \cmd{\legendcontdref} inserts the ``\emph{(Figure X continued)}'' mark.
 Their style can modifyied by redefining the commands.
 
-For example, \fref{fig:cell-cycle-mitosis} spans over two pages. Note how the two adjacent figure environments are constructed (and the figure placement specifier).
+For example, \fref{fig:cell-cycle-mitosis} spans over two pages. Note how the two adjacent figure environments are constructed (and their figure placement specifiers).
 
 \begin{figure}[p]
     \centering
@@ -135,9 +135,9 @@ For example, \fref{fig:cell-cycle-mitosis} spans over two pages. Note how the tw
 
 
 \section{Tables}
-While there are many packages for tabular environments, they should be compatible to this thesis document class.
 Both examples (\tref{tab:include} and \ref{tab:nsf-sed}) use the \texttt{threeparttable} environment to format the table and allow table notes.
-For more sophisticated formattings, check out the memoir documentation.
+There are many packages available to manage tabular environments and they are generally compatible to this thesis document class.
+For more sophisticated formattings, check out \texttt{memoir}'s documentation.
 
 \begin{table}[tb]
     \centering
@@ -189,12 +189,12 @@ For more sophisticated formattings, check out the memoir documentation.
 
 
 \section{Bibliography and Citations}
-The \texttt{wustlthesis} document class does not implement any bibliography settings, so any tool stack should be compatible.
+The \texttt{wustlthesis} document class itself does not implement any bibliography settings or styles, so any tool stack can be used together with it.
 
 In this example, the bibliography is managed by \href{http://biblatex-biber.sourceforge.net/}{Biber} and \href{https://www.ctan.org/pkg/biblatex}{BibLaTeX} (not BibTeX), which support Unicode and more formatting options.
-If \href{https://www.zotero.org/}{Zotero} is your reference manager, check out the \href{https://retorque.re/zotero-better-bibtex/}{Better BibTeX} plugin for Zotero to enable more seamless integration with BibLaTex (and BibTeX).
+If \href{https://www.zotero.org/}{Zotero} is your reference manager, check out \href{https://retorque.re/zotero-better-bibtex/}{Better BibTeX} plugin for Zotero to enable more seamless integration with BibLaTex (and BibTeX).
 
-Regardless of the tool stack, the standard commands can be used for citations, e.g., \cmd{\cite}\marg{key} and \cmd{\citeauthor}\marg{key}.
+Regardless of the tool stack in use, the citation commands should be the same, e.g., \cmd{\cite}\marg{key} and \cmd{\citeauthor}\marg{key}.
 For example, this paper by \citeauthor{Jinek2012} demonstrated CRISPR can cut DNA at specific nucleotide sequences \cite{Jinek2012}.
 
 
