@@ -134,7 +134,58 @@ For example, \fref{fig:cell-cycle-mitosis} spans over two pages. Note how the tw
 \end{figure}
 
 
+\section{Tables}
+While there are many packages for tabular environments, they should be compatible to this thesis document class.
+Both examples (\tref{tab:include} and \ref{tab:nsf-sed}) use the \texttt{threeparttable} environment to format the table and allow table notes.
+For more sophisticated formattings, check out the memoir documentation.
 
+\begin{table}[tb]
+    \centering
+    \caption[Definite postgraduation commitments of doctorate recipients]{%
+        Definite postgraduation commitments of doctorate recipients,
+        by citizenship status and major field of study in 2019.
+        Source: National Center for Science and Engineering Statistics, Survey of Earned Doctorates, National Science Foundation
+        (\href{https://ncses.nsf.gov/pubs/nsf21308/}{link}; Table 51).
+    }
+    \label{tab:nsf-sed}
+    \begin{threeparttable}[b]
+    \begin{tabular}{llrrrrrrr@{}}
+    \toprule
+    Citizenship & Field & Total &
+        Postdoc & Academia & Industry\tnote{a} & Other\tnote{b} & Abroad\\
+    \midrule
+    \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}All recipients\tnote{c}\end{tabular}}
+        & Bio./biomed. & 5,054 &
+            3,426 & 442 & 892 & 294 & 332 \\
+        & Health & 1,525 &
+            538	& 492 & 220 & 275 & 141\\
+        & Comp./info. & 1,414 &
+            276 & 254 & 789 & 95 & 161\\
+    \midrule
+    \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}U.S. citizen\\or PR\end{tabular}}
+        & Bio./biomed. & 3,860 &
+            2,536 & 385 & 679 & 260 & 118\\
+        & Health & 1,248 &
+            375 & 454 & 160 & 259 & 14\\
+        & Comp./info. & 557 &
+            102 & 133 & 247 & 75 & 23\\
+    \midrule
+    \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Temporary\\visa holder\end{tabular}}
+        & Bio./biomed. & 1,180 &
+            882 & 55 & 212 & 31 & 213\\
+        & Health & 275 &
+            163 & 37 & 59 & 16 & 124\\
+        & Comp./info. & 851 &
+            173 & 120 & 540 & 18 & 136\\
+    \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+    \item[a] Includes doctorate recipients who indicated self-employment.
+    \item[b] Includes doctorate recipients who indicated government, nonprofit, elementary or secondary school, or other employment and those with unknown employment.
+    \item[c] Includes respondents who did not report citizenship status.
+    \end{tablenotes}
+    \end{threeparttable}
+\end{table}
 
 
 \section{Citations}
