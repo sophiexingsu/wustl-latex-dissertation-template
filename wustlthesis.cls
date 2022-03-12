@@ -9,7 +9,7 @@
 %
 % This work has the LPPL maintenance status `unmaintained'.
 %
-% This work consists of the files wuthesis.cls.
+% This work consists of the files wustlthesis.cls.
 
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
