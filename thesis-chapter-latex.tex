@@ -188,8 +188,14 @@ For more sophisticated formattings, check out the memoir documentation.
 \end{table}
 
 
-\section{Citations}
-This paper demonstrated CRISPR can cut DNA at specific nucleotide sequences \cite{Jinek2012}.
+\section{Bibliography and Citations}
+The \texttt{wustlthesis} document class does not implement any bibliography settings, so any tool stack should be compatible.
+
+In this example, the bibliography is managed by \href{http://biblatex-biber.sourceforge.net/}{Biber} and \href{https://www.ctan.org/pkg/biblatex}{BibLaTeX} (not BibTeX), which support Unicode and more formatting options.
+If \href{https://www.zotero.org/}{Zotero} is your reference manager, check out the \href{https://retorque.re/zotero-better-bibtex/}{Better BibTeX} plugin for Zotero to enable more seamless integration with BibLaTex (and BibTeX).
+
+Regardless of the tool stack, the standard commands can be used for citations, e.g., \cmd{\cite}\marg{key} and \cmd{\citeauthor}\marg{key}.
+For example, this paper by \citeauthor{Jinek2012} demonstrated CRISPR can cut DNA at specific nucleotide sequences \cite{Jinek2012}.
 
 
 \section{Equations}

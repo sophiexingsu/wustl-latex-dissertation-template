@@ -27,12 +27,14 @@ You will need a TeX Live installation (2020 and later) with LuaLaTeX for this te
         lualatex-math stix2-otf \
         threeparttable makecell
 
-The bibliography is managed by Biber and BibLaTeX (not BibTex). Biblatex is considered a replacement for BibTeX and supports special characters (Unicode) and URLs in citations.
+The bibliography is managed by [Biber] and [BibLaTeX] (not BibTex). Biblatex is considered a replacement for BibTeX and supports special characters (Unicode) and URLs in citations.
 
 LaTeX document compilation is automated by Latexmk. Latexmk compiles LaTeX documents the correct number of times. Many makefiles for LaTeX documents often compile twice. Sometimes this is unnecessary, other times it is not enough. Latexmk will correctly determine the number of compilations necessary to produce a correct document.
 
 This template also sets up a GitHub Workflow that automatically builds PDF online when the status of this badge says passing: [![Build LaTeX PDF status](https://github.com/ccwang002/wustl-latex-dissertation-template/actions/workflows/build_latex.yml/badge.svg)][workflow-status]. Once you fork this repository and push new commits to GitHub, the workflow will be triggered and compiles the PDF. The PDF is available as a workflow artifact (see [GitHub's doc][github-artifact-doc]).
 
+[Biber]: http://biblatex-biber.sourceforge.net/
+[BibLaTex]: https://www.ctan.org/pkg/biblatex
 [workflow-status]: https://github.com/ccwang002/wustl-latex-dissertation-template/actions
 [github-artifact-doc]: https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts
 
