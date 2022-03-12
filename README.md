@@ -25,6 +25,7 @@ You will need a TeX Live installation (2020 and later) with LuaLaTeX for this te
         biber biblatex biblatex-nature \
         csquotes \
         lualatex-math stix2-otf \
+        emoji pifont \
         threeparttable makecell
 
 The bibliography is managed by [Biber] and [BibLaTeX] (not BibTex). Biblatex is considered a replacement for BibTeX and supports special characters (Unicode) and URLs in citations.
@@ -69,7 +70,15 @@ If you would like to submit changes to this template, please fork this repositor
 LaTeX Project Public License version 1.3
 
 ## Change Log
-Version 2021-09-16:
+2022-03-12:
+- Update template example
+
+2021-11-01:
+
+- Tweak typography
+- Use microtype to adjust text kerning
+
+2021-09-16:
 
 - Rewrite of the original `wuthesis.cls` file using memoir package
 
