@@ -4,6 +4,7 @@ The is a LaTeX version of the dissertation and thesis template for The Graduate 
 
 Template version: July 2018
 
+
 ## About
 
 This document contains the guidelines for the proper formatting of dissertations and theses for doctoral and master’s degree-seeking students within the Graduate School at Washington University in St. Louis. The document is formatted using the same guidelines it describes.  Consequently, by making an extra copy of this document, you can use it as a template in which you can replace the original text with your own while still retaining the general formatting.
@@ -48,6 +49,7 @@ To clean build files but not the compiled document: `latexmk -c`
 
 To clean all files incluing the compiled document: `latexmk -C`
 
+
 ## Differences to the Word Template
 
 While this template fully complies with the school's style guide, there are some differences to the official word template. Please compare the compiled output at [`thesis_demo.pdf`] to the official template at [`guide/dissertation_and_thesis_template_2018.pdf`][template_pdf].
@@ -59,28 +61,28 @@ Notable changes:
 - No underline in chapter titles
 - Header margins and font sizes are different
 
-## Contributing
 
+## Contributing
 *Please help keep this template up to date with The Graduate School's Microsoft Word template.*
 
 If you would like to submit changes to this template, please fork this repository and submit a pull request.
 
-## License
 
-LaTeX Project Public License version 1.3
+## License
+LaTeX Project Public License version 1.3.
+
 
 ## Change Log
 2022-03-12:
 - Update template example
 
 2021-11-01:
-
 - Tweak typography
 - Use microtype to adjust text kerning
 
 2021-09-16:
-
 - Rewrite of the original `wuthesis.cls` file using memoir package
+
 
 ## Origin of this template
 
