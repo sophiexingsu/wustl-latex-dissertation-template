@@ -26,7 +26,7 @@ You will need a TeX Live installation (2020 and later) with LuaLaTeX for this te
         biber biblatex biblatex-nature \
         csquotes \
         lualatex-math stix2-otf \
-        emoji pifont \
+        emoji \
         threeparttable makecell
 
 The bibliography is managed by [Biber] and [BibLaTeX] (not BibTex). Biblatex is considered a replacement for BibTeX and supports special characters (Unicode) and URLs in citations.
