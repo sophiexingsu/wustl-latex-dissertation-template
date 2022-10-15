@@ -22,7 +22,7 @@ jobs:
         file thesis.pdf | grep -q ' PDF '
 
     - name: Upload PDF
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: PDF
         path: thesis.pdf
