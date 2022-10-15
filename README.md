@@ -38,12 +38,13 @@ If you use the BasicTeX distribution with only minimal packages, install the add
         csquotes \
         lualatex-math stix2-otf \
         emoji \
-        threeparttable makecell enumitem
+        threeparttable makecell \
+        enumitem
 
 The bibliography is managed by [Biber] and [BibLaTeX] (not BibTeX).
 BibLaTeX is considered a replacement for BibTeX and supports special characters (Unicode) and URLs in citations.
 
-LaTeX document compilation is automated by Latexmk.
+LaTeX document compilation is automated by [Latexmk].
 Latexmk compiles LaTeX documents the correct number of times.
 Many makefiles for LaTeX documents often compile twice.
 Sometimes this is unnecessary, other times it is not enough.
@@ -55,6 +56,7 @@ The PDF is available as a workflow artifact (see [GitHub's doc][github-artifact-
 
 [Biber]: http://biblatex-biber.sourceforge.net/
 [BibLaTeX]: https://www.ctan.org/pkg/biblatex
+[Latexmk]: https://www.ctan.org/pkg/latexmk/
 [workflow-status]: https://github.com/ccwang002/wustl-latex-dissertation-template/actions
 [github-artifact-doc]: https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts
 
@@ -93,10 +95,11 @@ LaTeX Project Public License version 1.3.
 
 ## Change Log
 2022-10-16:
-- Update to 2022 edition of the official template
+- Update to follow the 2022 edition of the official template
+- Make formatting changes in the title page and abstract
 
 2022-03-12:
-- Update template example
+- Update the example of this template
 
 2021-11-01:
 - Tweak typography
