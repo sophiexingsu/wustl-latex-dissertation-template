@@ -56,7 +56,7 @@
 \pagestyle{plain}
 
 % Quotation style
-\AtBeginEnvironment{quote}{\OnehalfSpacing}
+\AtBeginEnvironment{quote}{\SingleSpacing}
 
 % Chapter style
 \makechapterstyle{thesis}{%
@@ -146,6 +146,8 @@
 \newcommand{\setthesiscommittee}[1]{\def\thesiscommittee{#1}}
 \newcommand{\setthesisschool}[1]{\def\thesisschool{#1}}
 \newcommand{\setthesisdepartment}[1]{\def\thesisdepartment{#1}}
+\newcommand{\setthesispresentee}[1]{\def\thesispresentee{#1}}
+\newcommand{\setthesisabstractfulldegree}[1]{\def\thesisabstractfulldegree{#1}}
 
 \newcommand{\thetitlepage}{%
     % Define a different page numbering for title page
@@ -169,9 +171,8 @@
     \thesisauthor \\[4\onelineskip]
 
     A \MakeLowercase{\thesistype} presented to \\
-    The Graduate School \\
-    of Washington University in \\
-    partial fulfillment of the \\
+    \thesispresentee \\
+    in partial fulfillment of the \\
     requirements for the degree \\
     of \thesisdegree
 
@@ -229,8 +230,7 @@
         \thesistitle \\
         by \\
         \thesisauthor \\
-        \thesisschool \\
-        \thesisdepartment \\
+        \thesisabstractfulldegree \\
         Washington University in St.~Louis, \degreeearnyear \\
         \thesisadvisorwithtitle%
     }}

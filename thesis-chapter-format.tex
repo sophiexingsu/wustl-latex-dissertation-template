@@ -1,7 +1,7 @@
 \chapter{Dissertation or Thesis Format}
 \label{chap:dissertation-format}
 
-The following guidelines offer you some degree of flexibility in formatting your thesis or dissertation.
+The following guidelines offer you some degree of flexibility in formatting your dissertation.
 Whichever options you choose to use, you must use them consistently throughout the document.
 
 \section{Margins}
@@ -32,7 +32,7 @@ You may start the chapter title below the top margin or you may leave some space
 The font size for chapter titles should be no larger than 24.
 There are two options for formatting the chapter title:
 
-\begin{enumerate}
+\begin{enumerate}[a.]
 	\item Type the word ``Chapter'' followed by the chapter number, skip a line, and type the chapter title on the following line; or
 	\item Type the chapter number followed by the chapter title, all on the same line.
 \end{enumerate}
@@ -62,16 +62,16 @@ Divisions smaller than subsections should be the same font size as the body text
 There are two options for numbering your figures and tables; choose one and be consistent in its use throughout your document.
 In either case, the name and description of the figure or table should be single spaced and can be a smaller font size.
 
-\begin{enumerate}
+\begin{enumerate}[a.]
 	\item Maintain a separate numbering sequence for your list of figures and list of tables.
 Label figures with the word ``Figure'' and tables with the word ``Table''; or
 	\item Label both figures and tables with the word ``Figure'' and maintain one numbering sequence.
 \end{enumerate}
 
-Place figures and tables as close to their reference in the text as possible.
+\noindent Place figures and tables as close to their reference in the text as possible.
 Do not let figures or tables spill out into the margins.
 
-\begin{enumerate}
+\begin{enumerate}[a.]
 	\item Place the figure number and title below each figure (or table labeled as a figure).
 	\item Place the table number and title above each table labeled as a table.
 \end{enumerate}
@@ -79,7 +79,9 @@ Do not let figures or tables spill out into the margins.
 \begin{figure}
     \includegraphics{figures/just-a-figure}
     \captionstyle{\raggedright}
-    \caption[Left justified figure]{You can left justify your figure.}
+    \caption[Left justified figure]{
+        \raggedright  % Temp fix \captionstyle not working
+        You can left justify your figure.}
     \label{fig:left-justified}
 \end{figure}
 
@@ -125,7 +127,7 @@ Kate Turabian, editor of official publications and dissertation secretary at the
 
 Equation numbering and formatting should follow the usual convention of your discipline and be acceptable to your committee.
 
-Equations may be set in-line with the text or numbered and placed in separate paragraphs.
+\noindent Equations may be set in-line with the text or numbered and placed in separate paragraphs.
 Use the same numbering style for equations as you would for figures and tables.
 Here is an example of an equation set in-line with a paragraph: $E = mc^{2}$.
 Here is an example equation placed in a separate paragraph:
