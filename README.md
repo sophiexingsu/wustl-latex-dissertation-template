@@ -71,10 +71,10 @@ To clean all files including the compiled document: `latexmk -C`
 ## Differences to the Word Template
 
 While this template fully complies with the school's style guide, there are some differences to the official word template.
-Please compare the compiled output at [`thesis_demo.pdf`] to the official template at [`guide/dissertation_and_thesis_template_2018.pdf`][template_pdf].
+Please compare the compiled output at [`thesis_demo.pdf`] to the official template at [`guide/dissertation_and_thesis_template_2022.pdf`][template_pdf].
 
 [`thesis_demo.pdf`]: https://github.com/ccwang002/wustl-latex-dissertation-template/blob/master/thesis_demo.pdf
-[template_pdf]: https://github.com/ccwang002/wustl-latex-dissertation-template/blob/master/guide/dissertation_and_thesis_template_2018.pdf
+[template_pdf]: https://github.com/ccwang002/wustl-latex-dissertation-template/blob/master/guide/dissertation_and_thesis_template_2022.pdf
 
 Notable changes:
 - No underline in chapter titles
@@ -110,10 +110,12 @@ LaTeX Project Public License version 1.3.
 
 The template was rewritten by Liang-Bo Wang in 2021 based on Kyle J. Harms (`@harmsk`)'s GitHub repo [harmsk/wustl-latex-dissertation-template].
 Due to the likely incompatibility and style changes, the document class was renamed from `wuthesis.cls` to `wustlthesis.cls`.
-Given this is a full rewrite, I also took the liberty of choosing a permissive license.
-Please let me know if there is any copyright infringement or license incompatibility.
+Given this was a full rewrite, the author took the liberty of choosing a permissive license.
+Please let us know if there is any copyright infringement or license incompatibility.
 
-While it's difficult to fully trace the origins of `wuthesis.cls`, based on the file comments, Kevin Ruland created the first version of the WashU Sever Institute thesis class `wuthesis.dtx` (later converted to `wuthesis.cls`) in 1995 based on UT Austin's Thesis Style File v2 by Dinesh Das in 1995. Revisions were made by Long Duan in 1996, by Greg Hackmann in 2005, 2007, and 2008, and finally by Michael Hall, David Lu in 2014. The git-traceable code was uploaded and modified by Jonathan Beard (`@jonathan-beard`) in [2015][jonathan-beard-fork].
+While it's difficult to fully trace the origins of `wuthesis.cls`, based on the file comments, Kevin Ruland created the first version of the WashU Sever Institute thesis class `wuthesis.dtx` (later converted to `wuthesis.cls`) in 1995 based on UT Austin's Thesis Style File v2 by Dinesh Das in 1995.
+Revisions were made by Long Duan in 1996, by Greg Hackmann in 2005, 2007, and 2008, and finally by Michael Hall, David Lu in 2014.
+The git-traceable code was uploaded and modified by Jonathan Beard (`@jonathan-beard`) in [2015][jonathan-beard-fork].
 It was then updated to match the school's 2016 official template by Kyle J.
 Harms (`@harmsk`), which became the upstream of this fork.
 
