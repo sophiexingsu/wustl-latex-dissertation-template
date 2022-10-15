@@ -56,7 +56,8 @@ This example explicitly creates the panel numbers since figures often have their
     \label{fig:subfigure-demo}
 \end{figure}
 
-Similarly, multiple tables can be grouped together as one using the same method. For example, see \tref{tab:subtable-demo}, which has two panels \subcaptionref{tab:subtab-a} and \subcaptionref{tab:subtab-b}.
+Similarly, multiple tables can be grouped together as one using the same method.
+For example, see \tref{tab:subtable-demo}, which has two panels \subcaptionref{tab:subtab-a} and \subcaptionref{tab:subtab-b}.
 
 \begin{table}[b]
     \centering
@@ -95,7 +96,8 @@ The text overflow can be achieved by using \cmd{\legendcontdnote} at the end of 
 \cmd{\legendcontdref} inserts the ``\emph{(Figure X continued)}'' mark.
 Their style can modifyied by redefining the commands.
 
-For example, \fref{fig:cell-cycle-mitosis} spans over two pages. Note how the two adjacent figure environments are constructed (and their figure placement specifiers).
+For example, \fref{fig:cell-cycle-mitosis} spans over two pages.
+Note how the two adjacent figure environments are constructed (and their figure placement specifiers).
 
 \begin{figure}[p]
     \centering
@@ -124,7 +126,8 @@ For example, \fref{fig:cell-cycle-mitosis} spans over two pages. Note how the tw
     \legend{%
         \legendcontdref{fig:cell-cycle-mitosis}
         \subref{fig:mitosis-metaphase}
-        During metaphase, the two centrosomes begin pulling the chromosomes towards opposite ends of the cell. The resulting tension causes the chromosomes to align along the metaphase plate or equatorial plane.
+        During metaphase, the two centrosomes begin pulling the chromosomes towards opposite ends of the cell.
+        The resulting tension causes the chromosomes to align along the metaphase plate or equatorial plane.
         \subref{fig:mitosis-anaphase}
         During anaphase, the replicated chromosomes are split and the newly-copied chromosomes are moved to opposite poles of the cell.
         \subref{fig:mitosis-telophase}
@@ -192,7 +195,7 @@ For more sophisticated formattings, check out \texttt{memoir}'s documentation.
 The \texttt{wustlthesis} document class itself does not implement any bibliography settings or styles, so any tool stack can be used together with it.
 
 In this example, the bibliography is managed by \href{http://biblatex-biber.sourceforge.net/}{Biber} and \href{https://www.ctan.org/pkg/biblatex}{BibLaTeX} (not BibTeX), which support Unicode and more formatting options.
-If \href{https://www.zotero.org/}{Zotero} is your reference manager, check out \href{https://retorque.re/zotero-better-bibtex/}{Better BibTeX} plugin for Zotero to enable more seamless integration with BibLaTex (and BibTeX).
+If \href{https://www.zotero.org/}{Zotero} is your reference manager, check out \href{https://retorque.re/zotero-better-bibtex/}{Better BibTeX} plugin for Zotero to enable more seamless integration with BibLaTeX (and BibTeX).
 
 Regardless of the tool stack in use, the citation commands should be the same, e.g., \cmd{\cite}\marg{key} and \cmd{\citeauthor}\marg{key}.
 For example, this paper by \citeauthor{Jinek2012} demonstrated CRISPR can cut DNA at specific nucleotide sequences \cite{Jinek2012}.
