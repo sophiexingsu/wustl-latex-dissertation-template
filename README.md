@@ -20,9 +20,9 @@ Make sure you use the month and year your degree is officially to be earned on t
 
 Once completed, you will need to submit your document as a PDF electronically, as per the [Doctoral Dissertation Guide](https://wustl.box.com/s/16rx96n2hupwg7uuepwsjerzafer36pl) and [Master’s Thesis Guide](https://wustl.box.com/s/mkuomxb82o2cjlpbdr5sqnlhq9xiiov7), which also can be found on the school website.
 
-Since 2022, the graduate school's official template has removed the formatting of master's thesis.
-This template has been updated to match the latest version (doctoral dissertation only), though their template are conceptually the same.
-The template for master's thesis can still be found in [the template made by the School of McKelvey Engineering](https://wustl.box.com/s/b6mvyjeo47gb2nd49bxhqq4j6t8in6w0).
+Since 2022, the graduate school's official template has removed any mentioning of the formatting of master's thesis.
+This template has been updated to match the latest version, though it is still compatible to the formatting of master's thesis.
+The template for master's thesis can be found in [the template made by the School of McKelvey Engineering](https://wustl.box.com/s/b6mvyjeo47gb2nd49bxhqq4j6t8in6w0).
 
 
 ## How to Use this Template
@@ -92,6 +92,9 @@ LaTeX Project Public License version 1.3.
 
 
 ## Change Log
+2022-10-16:
+- Update to 2022 edition of the official template
+
 2022-03-12:
 - Update template example
 
