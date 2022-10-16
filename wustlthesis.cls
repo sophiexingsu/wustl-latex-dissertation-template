@@ -1,5 +1,5 @@
 % WUSTL thesis/dissertation template
-% Copyright 2021 Liang-Bo Wang
+% Copyright 2021–2022 Liang-Bo Wang
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX Project Public
 % License, either version 1.3 of this license or (at your option) any later version.
@@ -13,7 +13,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
-\ProvidesClass{wustlthesis}[2021/11/01 WUSTL thesis/dissertation template]
+\ProvidesClass{wustlthesis}[2022/10/16 WUSTL thesis/dissertation template]
 
 
 % ---- Define Page Layout -----------------------------------------------------
