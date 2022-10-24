@@ -220,7 +220,8 @@
 % ---- Abstract page ---------------------------------------------------------
 \BeforeBeginEnvironment{abstract}{%
     \vspace*{-1.5in}\phantomsection\vspace*{1.5in}
-    \addcontentsline{toc}{chapter}{Abstract}}
+    \addcontentsline{toc}{chapter}{Abstract}%
+}
 % Update the abstract title.
 % Note the \addto{\captionLANG}{...} is needed to override babel.
 % Ref: https://tex.stackexchange.com/a/24778
