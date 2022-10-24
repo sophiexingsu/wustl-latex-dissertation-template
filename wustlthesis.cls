@@ -124,8 +124,8 @@
 \renewcommand*{\cfttablename}{\tablename}
 \renewcommand*{\cfttablepresnum}{\ }
 \renewcommand*{\cfttableaftersnum}{:}
-\cftsetindents{table}{0em}{2.5em}
 \setlength{\cftbeforetableskip}{6pt plus 1pt minus 1pt}
+\cftsetindents{table}{0em}{2.5em}
 
 % No chapter space inserted in LoF and LoT
 \renewcommand{\insertchapterspace}{}
