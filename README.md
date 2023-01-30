@@ -1,6 +1,6 @@
 # Dissertation and Thesis Template
 
-The is a LaTeX version of the dissertation and thesis template for The Graduate School at Washington University in St. Louis. (https://provost.wustl.edu/vpge/phd-education-and-governance/)
+This is a LaTeX version of the dissertation and thesis template for The Graduate School at Washington University in St. Louis. (https://provost.wustl.edu/vpge/phd-education-and-governance/)
 
 Template version: August (July) 2022
 
@@ -95,7 +95,7 @@ LaTeX Project Public License version 1.3.
 
 ## Change Log
 2023-01-30:
-- Add supplemental figures and tables
+- Add environments for supplemental figures and tables
 
 2022-10-16:
 - Update to follow the 2022 edition of the official template
