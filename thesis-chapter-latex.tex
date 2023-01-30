@@ -214,6 +214,56 @@ See Equation~\ref{eq:maxwell}.
     \end{aligned}
 \end{equation}
 
+
+\section{Supplemental figures and tables}
+\fref{suppfig:vector} is a supplemental figure.
+\fref{suppfig:subfigure-demo} has two panels, \subcaptionref{suppfig:subfigdemo-cat} and \subcaptionref{suppfig:subfigdemo-dog}.
+\fref{suppfig:subfigdemo-cat} refers to the cat panel.
+
+\begin{suppfigure}[tb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/just-a-plot}
+    \caption{Example supplemental figure.}
+    \label{suppfig:vector}
+\end{suppfigure}
+
+\begin{suppfigure}[t]
+    \begin{subsuppfigure}[b]{.5\linewidth}
+        \centering
+        \textbf{\sffamily A}\\[-0.5\onelineskip]
+        \HUGE \emoji{cat}\\
+        \emoji{cat-face}
+        \phantomlabel{suppfig:subfigdemo-cat}
+    \end{subsuppfigure}%
+    \begin{subsuppfigure}[b]{.5\linewidth}
+        \centering
+        \textbf{\sffamily B}\\[-0.5\onelineskip]
+        \HUGE \emoji{dog}\\
+        \emoji{dog-face}
+        \phantomlabel{suppfig:subfigdemo-dog}
+    \end{subsuppfigure}
+    \caption[Supplemental two animals and their emojis.]{%
+        Supplemental two animals and their emojis.
+        \subref{suppfig:subfigdemo-cat} cats and \subref{suppfig:subfigdemo-dog} dogs.
+    }
+    \label{suppfig:subfigure-demo}
+\end{suppfigure}
+
+\tref{supptab:table-demo} is a supplemental table.
+
+\begin{supptable}[b]
+    \centering
+    \caption{Supplemental table example.}
+    \label{supptab:table-demo}
+    \begin{tabular}{lc} \toprule
+    A legendary table & 5 \\
+    with two lines    & 6 \\ \bottomrule
+    \end{tabular}
+\end{supptable}
+
 \clearpage
+
+
 \section{Page layout}
 \layout
+\clearpage

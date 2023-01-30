@@ -42,6 +42,13 @@
 \renewcommand\thesubfigure{\Alph{subfigure}}
 \renewcommand\thesubtable{\Alph{subtable}}
 \captionsetup{subrefformat=parens}
+% Enable subcaption for supplemental figures/tables.
+% The caption format is "Supplemental Figure S1. Some caption. (A) …. (B) …."
+% and the label reference format is "Figure S1A".
+\DeclareCaptionSubType{suppfigure}
+\DeclareCaptionSubType{supptable}
+\renewcommand\thesubsuppfigure{\Alph{subsuppfigure}}
+\renewcommand\thesubsupptable{\Alph{subsupptable}}
 
 % Allowing subcaptions when all figure panels are combined
 % into one source image. Based on https://tex.stackexchange.com/a/255790

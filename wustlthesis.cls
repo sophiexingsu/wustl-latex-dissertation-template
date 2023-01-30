@@ -13,7 +13,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
-\ProvidesClass{wustlthesis}[2022/10/16 WUSTL thesis/dissertation template]
+\ProvidesClass{wustlthesis}[2023/01/30 WUSTL thesis/dissertation template]
 
 
 % ---- Define Page Layout -----------------------------------------------------
@@ -87,6 +87,20 @@
 \maxsecnumdepth{subsection}
 
 
+% ---- Supplemental figures and tables  -----------------------------------------
+\newcommand{\suppfigurename}{Supplemental Figure}
+\newfloat[chapter]{suppfigure}{lof}{\suppfigurename}
+\renewcommand\thesuppfigure{%
+    S\ifnum\c@chapter>\z@ \thechapter.\fi \@arabic\c@suppfigure%
+}
+
+\newcommand{\supptablename}{Supplemental Table}
+\newfloat[chapter]{supptable}{lot}{\supptablename}
+\renewcommand\thesupptable{%
+    S\ifnum\c@chapter>\z@ \thechapter.\fi \@arabic\c@supptable%
+}
+
+
 % ---- Bibliography/References style ------------------------------------------
 \setlength{\bibitemsep}{\onelineskip}
 
@@ -120,12 +134,29 @@
 \setlength{\cftbeforefigureskip}{6pt plus 1pt minus 1pt}
 \cftsetindents{figure}{0em}{2.5em}
 
+% include supplemental figures in LoF
+\newlistentry{suppfigure}{lof}{0}
+\renewcommand*{\cftsuppfigurename}{\figurename}
+\renewcommand*{\cftsuppfigurepresnum}{\ }
+\renewcommand*{\cftsuppfigureaftersnum}{:}
+\setlength{\cftbeforesuppfigureskip}{\cftbeforefigureskip}
+\cftsetindents{suppfigure}{0em}{2.5em}
+
+
 \addtodef{\listoftables}{\clearpage}{}
 \renewcommand*{\cfttablename}{\tablename}
 \renewcommand*{\cfttablepresnum}{\ }
 \renewcommand*{\cfttableaftersnum}{:}
 \setlength{\cftbeforetableskip}{6pt plus 1pt minus 1pt}
 \cftsetindents{table}{0em}{2.5em}
+
+% include supplemental tables in LoT
+\newlistentry{supptable}{lot}{0}
+\renewcommand*{\cftsupptablename}{\tablename}
+\renewcommand*{\cftsupptablepresnum}{\ }
+\renewcommand*{\cftsupptableaftersnum}{:}
+\setlength{\cftbeforesupptableskip}{\cftbeforetableskip}
+\cftsetindents{supptable}{0em}{2.5em}
 
 % No chapter space inserted in LoF and LoT
 \renewcommand{\insertchapterspace}{}
